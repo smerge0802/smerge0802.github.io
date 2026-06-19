@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta name="author" content="{{ site.author.name }}">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Noto+Serif+KR:wght@300..700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <script>
+    (() => {
+      try {
+        const storedTheme = localStorage.getItem("theme");
+        document.documentElement.dataset.theme = storedTheme === "dark" ? "dark" : "light";
+      } catch {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-head">
+    <nav class="nav" aria-label="Main">
+      <a href="/writings/" {% if page.url.startsWith("/writings") %}aria-current="page"{% endif %}>writings</a>
+      <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>about</a>
+      <a href="{{ site.author.cvPath }}" target="_blank" rel="noopener">cv</a>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" data-theme-toggle>
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 5.3a6.7 6.7 0 1 0 0 13.4 6.7 6.7 0 0 0 0-13.4Zm0 1.6a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2ZM12 1.5c.44 0 .8.36.8.8v1.15a.8.8 0 0 1-1.6 0V2.3c0-.44.36-.8.8-.8Zm0 18.25c.44 0 .8.36.8.8v1.15a.8.8 0 0 1-1.6 0v-1.15c0-.44.36-.8.8-.8ZM2.3 11.2h1.15a.8.8 0 0 1 0 1.6H2.3a.8.8 0 0 1 0-1.6Zm18.25 0h1.15a.8.8 0 0 1 0 1.6h-1.15a.8.8 0 0 1 0-1.6ZM5.14 4.01l.82.82a.8.8 0 0 1-1.13 1.13l-.82-.82a.8.8 0 1 1 1.13-1.13Zm14.03 14.03.82.82a.8.8 0 0 1-1.13 1.13l-.82-.82a.8.8 0 0 1 1.13-1.13Zm.82-12.9-.82.82a.8.8 0 0 1-1.13-1.13l.82-.82a.8.8 0 0 1 1.13 1.13ZM5.96 19.17l-.82.82a.8.8 0 1 1-1.13-1.13l.82-.82a.8.8 0 1 1 1.13 1.13Z"/>
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M20.18 15.52a.78.78 0 0 1 .13.82 9.15 9.15 0 0 1-8.43 5.56 9.79 9.79 0 0 1-9.78-9.78 9.15 9.15 0 0 1 5.56-8.43.78.78 0 0 1 .95 1.12 7.55 7.55 0 0 0-1.07 3.9 7.75 7.75 0 0 0 7.75 7.75 7.55 7.55 0 0 0 3.9-1.07.78.78 0 0 1 .99.13Zm-1.98 1.98a9.21 9.21 0 0 1-2.91.47 9.27 9.27 0 0 1-9.26-9.26c0-1 .16-1.98.47-2.91a7.65 7.65 0 0 0-2.9 6.32 8.27 8.27 0 0 0 8.28 8.28 7.65 7.65 0 0 0 6.32-2.9Z"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-foot">
+    <p>
+      <span>© 2026 {{ site.author.name }}</span>
+      <span class="foot-sep">·</span>
+      <a href="{{ site.author.scholar }}" target="_blank" rel="noopener">scholar</a>
+      <span class="foot-sep">·</span>
+      <a href="mailto:{{ site.author.email }}">email</a>
+    </p>
+  </footer>
+  <script>
+    (() => {
+      const toggle = document.querySelector("[data-theme-toggle]");
+      if (!toggle) return;
+
+      const root = document.documentElement;
+      const setTheme = (theme) => {
+        root.dataset.theme = theme;
+        const isDark = theme === "dark";
+        toggle.setAttribute("aria-pressed", String(isDark));
+        toggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+      };
+
+      setTheme(root.dataset.theme === "dark" ? "dark" : "light");
+
+      toggle.addEventListener("click", () => {
+        const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+        setTheme(nextTheme);
+        try {
+          localStorage.setItem("theme", nextTheme);
+        } catch {}
+      });
+    })();
+  </script>
+</body>
+</html>

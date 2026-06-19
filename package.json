@@ -1,0 +1,15 @@
+{
+  "name": "smerge0802-github-io",
+  "version": "1.0.0",
+  "description": "Personal site of Seungmin Kim — AI safety researcher",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node ./node_modules/@11ty/eleventy/cmd.cjs",
+    "serve": "node ./node_modules/@11ty/eleventy/cmd.cjs --serve --port 8088"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Seungmin Kim",
+  "description": "Seungmin Kim — AI Safety researcher. Adversarial robustness, speech AI security, and voice protection against voice-cloning attacks.",
+  "url": "https://smerge0802.github.io",
+  "author": {
+    "name": "Seungmin Kim",
+    "nameKo": "김승민",
+    "email": "kimsm0802@soongsil.ac.kr",
+    "scholar": "https://scholar.google.com/citations?user=TCTq818AAAAJ&hl=ko",
+    "cvPath": "/assets/CV_ksm.pdf"
+  }
+}

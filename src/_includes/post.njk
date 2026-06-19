@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+<article class="post">
+  <p class="crumb"><a href="/writings/">&larr; writings</a></p>
+  <header class="post-head">
+    <h1 class="post-title">{{ title }}</h1>
+    <p class="post-meta"><time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time></p>
+  </header>
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+</article>
