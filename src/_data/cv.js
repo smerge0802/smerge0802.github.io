@@ -24,9 +24,8 @@ export default {
         "NaVo: Natural Voice Protection against Voice Cloning Attacks via Generative Universal Adversarial Audio",
       venue: "Interspeech 2026",
       note: "Accepted",
-      authors:
-        "Seoyoung Park*, Seungmin Kim*, Sohee Park, Dain Kim, et al." +
-        "<br>*These authors contributed equally and are listed in alphabetical order.",
+      authors: "Seoyoung Park*, Seungmin Kim*, Sohee Park, Dain Kim, et al.",
+      authorNote: "*These authors contributed equally and are listed in alphabetical order.",
     },
     {
       date: "May. 2026",

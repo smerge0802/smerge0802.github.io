@@ -66,7 +66,8 @@ permalink: /
     <div class="entry-body">
       <p class="entry-title">{{ pub.title }}</p>
       <p class="entry-where">{{ pub.venue }}{% if pub.note %} &middot; {{ pub.note }}{% endif %}</p>
-      <p class="entry-detail">{{ pub.authors | replace("Seungmin Kim", "<strong>Seungmin Kim</strong>") | safe }}</p>
+      <p class="entry-detail publication-authors">{{ pub.authors | replace("Seungmin Kim", "<strong>Seungmin Kim</strong>") | safe }}</p>
+      {% if pub.authorNote %}<p class="publication-note">{{ pub.authorNote }}</p>{% endif %}
     </div>
   </div>
   {% endfor %}

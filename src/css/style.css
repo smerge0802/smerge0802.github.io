@@ -109,8 +109,8 @@ a:hover {
 
 .nav a {
   font-family: var(--mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.18em;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
   color: var(--ink-soft);
   text-decoration: none;
   position: relative;
@@ -222,9 +222,10 @@ html[data-theme="dark"] .theme-icon-moon {
 }
 
 .hero-name {
-  font-size: 2.45rem;
-  font-weight: 500;
+  font-size: clamp(2.65rem, 5vw, 3rem);
+  font-weight: 650;
   font-variation-settings: "opsz" 60;
+  letter-spacing: -0.025em;
   letter-spacing: 0;
   line-height: 1.15;
   margin: 0;
@@ -232,17 +233,17 @@ html[data-theme="dark"] .theme-icon-moon {
 
 .hero-sub {
   font-family: var(--mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
   color: var(--ink-faint);
   margin: 0.9rem 0 0;
 }
 
 .lede {
   font-style: italic;
-  font-size: 1.28rem;
+  font-size: 1.18rem;
   font-variation-settings: "opsz" 20;
-  line-height: 1.62;
+  line-height: 1.72;
   color: var(--ink-soft);
   margin: 2.1rem 0 0;
 }
@@ -313,9 +314,9 @@ html[data-theme="dark"] .theme-icon-moon {
 
 .label {
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 500;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink-faint);
   border-top: 1px solid var(--line);
@@ -367,13 +368,14 @@ html[data-theme="dark"] .theme-icon-moon {
 }
 
 .entry-title {
-  font-size: 1.04rem;
-  font-weight: 600;
+  font-size: 1.08rem;
+  font-weight: 650;
+  line-height: 1.48;
 }
 
 .entry-where {
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--ink-soft);
   margin-top: 0.1rem !important;
 }
@@ -388,10 +390,27 @@ html[data-theme="dark"] .theme-icon-moon {
 }
 
 .entry-detail {
-  font-size: 0.95rem;
-  line-height: 1.68;
+  font-size: 0.9rem;
+  line-height: 1.65;
   color: var(--ink-soft);
   margin-top: 0.35rem !important;
+}
+
+.publication-authors {
+  font-size: 0.91rem;
+  line-height: 1.55;
+}
+
+.publication-authors strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.publication-note {
+  margin-top: 0.18rem !important;
+  color: var(--ink-faint);
+  font-size: 0.76rem;
+  line-height: 1.5;
 }
 
 .cv-more {
@@ -455,7 +474,7 @@ html[data-theme="dark"] .theme-icon-moon {
 
 .post-date {
   font-family: var(--mono);
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   color: var(--ink-faint);
 }
 
@@ -706,8 +725,8 @@ html[data-theme="dark"] .theme-icon-moon {
 
 .site-foot p {
   font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
   color: var(--ink-faint);
   margin: 0;
 }
@@ -739,8 +758,8 @@ html[data-theme="dark"] .theme-icon-moon {
   }
 
   .nav a {
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
   }
 
   .theme-toggle {
@@ -754,7 +773,7 @@ html[data-theme="dark"] .theme-icon-moon {
   }
 
   .hero-name {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 
   .contact-links {
