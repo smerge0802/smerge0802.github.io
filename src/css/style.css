@@ -14,8 +14,8 @@
   --panel: #f7f7f7;
   --accent: #000000;
 
-  --serif: "Newsreader", "Noto Serif KR", "Apple SD Gothic Neo", Georgia, serif;
-  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --serif: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --measure: 42.5rem;
 }

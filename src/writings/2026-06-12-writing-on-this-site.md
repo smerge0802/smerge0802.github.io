@@ -15,7 +15,7 @@ The date comes from the filename, the URL comes from the slug
 
 ## What markdown renders like
 
-Body text is set in Newsreader at a comfortable measure. Inline `code` sits in a
+Body text is set in Pretendard at a comfortable measure. Inline `code` sits in a
 small panel, and code blocks get build-time syntax highlighting — no JavaScript
 shipped to the browser:
 
