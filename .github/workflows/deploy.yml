@@ -23,6 +23,8 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
       - run: npm ci
       # 레포 이름이 *.github.io 면 루트 배포(prefix 없음),
       # 아니면 https://<user>.github.io/<repo>/ 프로젝트 페이지용 prefix를 자동 적용
