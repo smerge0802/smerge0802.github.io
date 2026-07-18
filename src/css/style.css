@@ -409,7 +409,7 @@ html[data-theme="dark"] .theme-icon-moon {
 .publication-note {
   margin-top: 0.18rem !important;
   color: var(--ink-faint);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   line-height: 1.45;
   letter-spacing: 0.01em;
 }
