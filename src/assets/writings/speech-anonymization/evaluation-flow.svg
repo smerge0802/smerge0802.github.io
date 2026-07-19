@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 530" role="img" aria-labelledby="title desc">
+  <title id="title">한국어 음성 비식별화 평가 흐름</title>
+  <desc id="desc">한국어 통화음성을 네 가지 익명화 기법으로 처리한 뒤, 청취평가와 EER 기반 자동 평가로 비교하는 연구 흐름도</desc>
+  <style>
+    .bg { fill: #f7f7f7; }
+    .card { fill: #fff; stroke: #0a0a0a; stroke-width: 2; }
+    .soft { fill: #fff; stroke: #a0a0a0; stroke-width: 1.5; }
+    .line { fill: none; stroke: #0a0a0a; stroke-width: 2; marker-end: url(#arrow); }
+    .guide { fill: none; stroke: #a0a0a0; stroke-width: 1.5; stroke-dasharray: 5 6; }
+    .label { font: 600 22px 'Pretendard', Arial, sans-serif; fill: #0a0a0a; }
+    .body { font: 400 18px 'Pretendard', Arial, sans-serif; fill: #3f3f3f; }
+    .micro { font: 500 14px 'Pretendard', Arial, sans-serif; letter-spacing: 1.4px; fill: #666; }
+    .method { font: 600 17px 'Pretendard', Arial, sans-serif; fill: #0a0a0a; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0a0a0a"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1200" height="530" rx="4"/>
+  <text class="micro" x="60" y="58">RESEARCH EVALUATION FLOW</text>
+
+  <rect class="card" x="60" y="132" width="210" height="174" rx="3"/>
+  <text class="label" x="85" y="190">한국어 통화음성</text>
+  <text class="body" x="85" y="224">단일 화자 구간 추출</text>
+  <text class="body" x="85" y="251">· 전처리 ·</text>
+
+  <path class="line" d="M270 219 H355"/>
+
+  <rect class="card" x="355" y="86" width="286" height="266" rx="3"/>
+  <text class="label" x="380" y="135">음성 비식별화</text>
+  <text class="micro" x="380" y="164">METHODS COMPARED</text>
+  <rect class="soft" x="380" y="188" width="110" height="52" rx="2"/>
+  <text class="method" x="410" y="221">Pitch</text>
+  <rect class="soft" x="506" y="188" width="110" height="52" rx="2"/>
+  <text class="method" x="515" y="221">McAdams</text>
+  <rect class="soft" x="380" y="256" width="110" height="52" rx="2"/>
+  <text class="method" x="390" y="289">Resampling</text>
+  <rect class="soft" x="506" y="256" width="110" height="52" rx="2"/>
+  <text class="method" x="539" y="289">VTLN</text>
+
+  <path class="line" d="M641 219 H720 V143 H785"/>
+  <path class="line" d="M641 219 H720 V380 H785"/>
+
+  <rect class="card" x="785" y="76" width="325" height="135" rx="3"/>
+  <text class="micro" x="810" y="112">HUMAN EVALUATION</text>
+  <text class="label" x="810" y="151">청취평가</text>
+  <text class="body" x="810" y="181">50명 · 화자 유사도 0–5점</text>
+
+  <rect class="card" x="785" y="312" width="325" height="135" rx="3"/>
+  <text class="micro" x="810" y="348">AUTOMATIC EVALUATION</text>
+  <text class="label" x="810" y="387">화자 검증</text>
+  <text class="body" x="810" y="417">ECAPA-TDNN · EER</text>
+
+  <path class="guide" d="M947 211 V276"/>
+  <text class="micro" x="918" y="260">COMPARE</text>
+</svg>
