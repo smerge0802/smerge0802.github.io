@@ -799,6 +799,16 @@ html[data-theme="dark"] .theme-icon-moon {
   max-width: 48rem;
 }
 
+.prose .research-figure-scroll {
+  display: block;
+  overflow-x: auto;
+  color: inherit;
+}
+
+.prose .research-figure-scroll img {
+  display: block;
+}
+
 .prose .research-figure-pair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1104,6 +1114,11 @@ html[data-theme="dark"] .theme-icon-moon {
 
   .prose .research-figure-pair {
     grid-template-columns: 1fr;
+  }
+
+  .prose .research-figure-comparison .research-figure-scroll img {
+    width: 46rem;
+    max-width: none;
   }
 
   .prose .publication-card {
