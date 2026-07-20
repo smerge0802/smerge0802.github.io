@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 580" role="img" aria-labelledby="title desc">
+  <title id="title">RoCo와 기존 음성 보호 방법의 생성 시간 비교</title>
+  <desc id="desc">5초에서 10초 길이 음성을 보호하는 데 걸린 시간을 SV2TTS, YourTTS, AVC 조건별로 비교한 가로 막대그래프다. RoCo는 각각 20초, 22초, 13초로 가장 빠르다.</desc>
+  <rect width="1000" height="540" fill="#ffffff"/>
+  <g font-family="Pretendard, Arial, sans-serif">
+    <text x="20" y="36" font-size="22" font-weight="650" fill="#111111">Generation time for defended speech</text>
+    <text x="20" y="62" font-size="14" fill="#666666">5–10 second input · lower is faster · seconds</text>
+
+    <g stroke="#dddddd" stroke-width="1">
+      <line x1="205" y1="82" x2="205" y2="530"/>
+      <line x1="370" y1="82" x2="370" y2="530"/>
+      <line x1="535" y1="82" x2="535" y2="530"/>
+      <line x1="700" y1="82" x2="700" y2="530"/>
+      <line x1="865" y1="82" x2="865" y2="530"/>
+    </g>
+    <g font-size="12" fill="#777777" text-anchor="middle">
+      <text x="205" y="552">0</text>
+      <text x="370" y="552">30</text>
+      <text x="535" y="552">60</text>
+      <text x="700" y="552">90</text>
+      <text x="865" y="552">120</text>
+    </g>
+
+    <g font-size="15" fill="#333333">
+      <text x="20" y="116" font-weight="650">SV2TTS</text>
+      <text x="82" y="151">AntiFake</text><rect x="205" y="134" width="622" height="22" fill="#c9c9c9"/><text x="837" y="151">113</text>
+      <text x="82" y="181">AttackVC</text><rect x="205" y="164" width="671" height="22" fill="#777777"/><text x="886" y="181">122</text>
+      <text x="82" y="211" font-weight="650">RoCo</text><rect x="205" y="194" width="110" height="22" fill="#111111"/><text x="325" y="211" font-weight="650">20</text>
+
+      <text x="20" y="266" font-weight="650">YourTTS</text>
+      <text x="82" y="301">AntiFake</text><rect x="205" y="284" width="490" height="22" fill="#c9c9c9"/><text x="705" y="301">89</text>
+      <text x="82" y="331">AttackVC</text><rect x="205" y="314" width="220" height="22" fill="#777777"/><text x="435" y="331">40</text>
+      <text x="82" y="361" font-weight="650">RoCo</text><rect x="205" y="344" width="121" height="22" fill="#111111"/><text x="336" y="361" font-weight="650">22</text>
+
+      <text x="20" y="416" font-weight="650">AVC</text>
+      <text x="82" y="451">AntiFake</text><rect x="205" y="434" width="578" height="22" fill="#c9c9c9"/><text x="793" y="451">105</text>
+      <text x="82" y="481">AttackVC</text><rect x="205" y="464" width="325" height="22" fill="#777777"/><text x="540" y="481">59</text>
+      <text x="82" y="511" font-weight="650">RoCo</text><rect x="205" y="494" width="72" height="22" fill="#111111"/><text x="287" y="511" font-weight="650">13</text>
+    </g>
+  </g>
+</svg>

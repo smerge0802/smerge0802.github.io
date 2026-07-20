@@ -33,7 +33,8 @@ export default {
         "RoCo: Robust Code for Fast and Effective Proactive Defense against Voice Cloning Attack",
       venue: "ICASSP 2026",
       note: "Oral",
-      authors: "Seungmin Kim, Dain Kim, Sohee Park, Daeseon Choi",
+      authors: "Seungmin Kim*, Dain Kim*, Sohee Park, Daeseon Choi",
+      authorNote: "*These authors contributed equally to this work.",
     },
     {
       date: "Jun. 2024",

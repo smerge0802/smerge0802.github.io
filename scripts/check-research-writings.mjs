@@ -3,10 +3,12 @@ import { existsSync, readFileSync } from "node:fs";
 
 const root = new URL("../", import.meta.url);
 const rovoPath = "src/writings/2025-05-19-rovo-robust-voice-protection.md";
+const rocoPath = "src/writings/2026-05-03-roco-robust-code.md";
 const articlePaths = [
   "src/writings/2023-03-31-korean-speech-anonymization.md",
   "src/writings/2024-05-29-voice-synthesis-detection.md",
   rovoPath,
+  rocoPath,
 ];
 
 const rovoAssets = [
@@ -16,6 +18,12 @@ const rovoAssets = [
   "src/assets/writings/rovo/alternating-optimization.png",
   "src/assets/writings/rovo/target-gender-embedding.png",
   "src/assets/writings/rovo/user-study.png",
+];
+
+const rocoAssets = [
+  "src/assets/writings/roco/roco-framework.png",
+  "src/assets/writings/roco/generation-time.svg",
+  "src/assets/writings/roco/icassp-presentation.jpg",
 ];
 
 const politeEnding = /(?:습니다|합니다|입니다|됩니다|있습니다|보였습니다|였습니다|겠습니다)/;
@@ -49,6 +57,20 @@ assert.equal((rovo.match(/class="research-figure-scroll"/g) ?? []).length, 2);
 for (const assetPath of rovoAssets) {
   assert.equal(existsSync(new URL(assetPath, root)), true, `${assetPath}가 필요하다.`);
   assert.match(rovo, new RegExp(assetPath.replace("src", "").replaceAll("/", "\\/")));
+}
+
+const roco = readFileSync(new URL(rocoPath, root), "utf8");
+assert.match(roco, /period:\s*"2025 – 2026"/);
+assert.match(roco, /RoVO/);
+assert.match(roco, /ICASSP 2026/);
+assert.match(roco, /10\.1109\/ICASSP55912\.2026\.11462176/);
+assert.match(roco, /https:\/\/smerge0802\.github\.io\/RoCo\//);
+assert.match(roco, /\/writings\/rovo-robust-voice-protection\//);
+assert.equal((roco.match(/class="section-label"/g) ?? []).length, 11);
+
+for (const assetPath of rocoAssets) {
+  assert.equal(existsSync(new URL(assetPath, root)), true, `${assetPath}가 필요하다.`);
+  assert.match(roco, new RegExp(assetPath.replace("src", "").replaceAll("/", "\\/")));
 }
 
 const css = readFileSync(new URL("src/css/style.css", root), "utf8");
