@@ -4,11 +4,13 @@ import { existsSync, readFileSync } from "node:fs";
 const root = new URL("../", import.meta.url);
 const rovoPath = "src/writings/2025-05-19-rovo-robust-voice-protection.md";
 const rocoPath = "src/writings/2026-05-03-roco-robust-code.md";
+const navoPath = "src/writings/2026-06-15-navo-natural-voice-protection.md";
 const articlePaths = [
   "src/writings/2023-03-31-korean-speech-anonymization.md",
   "src/writings/2024-05-29-voice-synthesis-detection.md",
   rovoPath,
   rocoPath,
+  navoPath,
 ];
 
 const rovoAssets = [
@@ -24,6 +26,13 @@ const rocoAssets = [
   "src/assets/writings/roco/roco-framework.png",
   "src/assets/writings/roco/generation-time.svg",
   "src/assets/writings/roco/icassp-presentation.jpg",
+];
+
+const navoAssets = [
+  "src/assets/writings/navo/navo-framework.png",
+  "src/assets/writings/navo/gender-embedding.png",
+  "src/assets/writings/navo/adaptive-attacks.png",
+  "src/assets/writings/navo/navo-accepted-manuscript.pdf",
 ];
 
 const politeEnding = /(?:습니다|합니다|입니다|됩니다|있습니다|보였습니다|였습니다|겠습니다)/;
@@ -76,6 +85,24 @@ assert.equal((roco.match(/class="section-label"/g) ?? []).length, 11);
 for (const assetPath of rocoAssets) {
   assert.equal(existsSync(new URL(assetPath, root)), true, `${assetPath}가 필요하다.`);
   assert.match(roco, new RegExp(assetPath.replace("src", "").replaceAll("/", "\\/")));
+}
+
+const navo = readFileSync(new URL(navoPath, root), "utf8");
+assert.match(navo, /period:\s*"2026"/);
+assert.match(navo, /Interspeech 2026 · Accepted/);
+assert.match(navo, /196명 · 42명 · 42명/);
+assert.match(navo, /ElevenLabs/);
+assert.match(navo, /76%/);
+assert.match(
+  navo,
+  /\*These authors contributed equally and are listed in alphabetical order\./,
+);
+assert.equal((navo.match(/class="section-label"/g) ?? []).length, 13);
+assert.equal((navo.match(/class="research-figure-scroll"/g) ?? []).length, 3);
+
+for (const assetPath of navoAssets) {
+  assert.equal(existsSync(new URL(assetPath, root)), true, `${assetPath}가 필요하다.`);
+  assert.match(navo, new RegExp(assetPath.replace("src", "").replaceAll("/", "\\/")));
 }
 
 const rocoGenerationChart = readFileSync(
