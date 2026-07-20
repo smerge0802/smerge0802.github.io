@@ -1,8 +1,8 @@
-# RoVO Research Writing Implementation Plan
+# RoVo Research Writing Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Add a detailed 2024–2025 RoVO research case study based on the supplied current manuscript and supplementary material, with optimized paper figures, explicit under-review status, and a separate arXiv v1 link.
+**Goal:** Add a detailed 2024–2025 RoVo research case study based on the supplied current manuscript and supplementary material, with optimized paper figures, explicit under-review status, and a separate arXiv v1 link.
 
 **Architecture:** The article is a single Eleventy Markdown entry that reuses the existing research-writing components in `style.css`. Six optimized image assets live under a dedicated `rovo` folder. The existing writing checker becomes the regression boundary for article structure, tone, version disclosure, and required assets.
 
@@ -16,7 +16,7 @@
 - Do not expose confidential venue, submission, or anonymous-review metadata in the repository or generated HTML.
 - Use Korean paper style `~했다`, `~다`; reject `~습니다`, `~합니다`, `~입니다`, `~됩니다`, and `~있습니다`.
 - Every H2 must have a sequential English section label immediately before it.
-- Use the existing monochrome/Pretendard research-writing visual system; add no independent RoVO theme.
+- Use the existing monochrome/Pretendard research-writing visual system; add no independent RoVo theme.
 - Every figure needs Korean alt text and a caption identifying the current manuscript or supplementary material as its source.
 - Do not publish the supplied manuscript PDFs or audio samples.
 
@@ -24,20 +24,20 @@
 
 ## File Map
 
-- Create `src/writings/2025-05-19-rovo-robust-voice-protection.md`: complete Korean RoVO case study and manuscript/preprint links.
+- Create `src/writings/2025-05-19-rovo-robust-voice-protection.md`: complete Korean RoVo case study and manuscript/preprint links.
 - Create `src/assets/writings/rovo/threat-overview.png`: current manuscript Figure 1.
 - Create `src/assets/writings/rovo/rovo-framework.png`: current manuscript Figure 2.
 - Create `src/assets/writings/rovo/spectrogram-comparison.png`: current manuscript Figure 3.
 - Create `src/assets/writings/rovo/alternating-optimization.png`: current manuscript Figure 4.
 - Create `src/assets/writings/rovo/target-gender-embedding.png`: supplementary Figure 1 panels combined horizontally.
 - Create `src/assets/writings/rovo/user-study.png`: current manuscript Figure 5.
-- Modify `scripts/check-research-writings.mjs`: include RoVO and enforce its version/status/assets/privacy invariants.
+- Modify `scripts/check-research-writings.mjs`: include RoVo and enforce its version/status/assets/privacy invariants.
 - Modify `docs/superpowers/plans/2026-07-20-rovo-research-writing.md`: check off completed steps during execution.
 - Generated only, do not commit: `_site/writings/rovo-robust-voice-protection/index.html`.
 
 ---
 
-### Task 1: Add a Failing RoVO Content Contract
+### Task 1: Add a Failing RoVo Content Contract
 
 **Files:**
 - Modify: `scripts/check-research-writings.mjs`
@@ -45,11 +45,11 @@
 
 **Interfaces:**
 - Consumes: repository paths resolved from `import.meta.url`.
-- Produces: exit code 0 only when all research writings and RoVO-specific public-content invariants hold.
+- Produces: exit code 0 only when all research writings and RoVo-specific public-content invariants hold.
 
-- [ ] **Step 1: Extend the checker with RoVO article and asset requirements**
+- [ ] **Step 1: Extend the checker with RoVo article and asset requirements**
 
-Add `existsSync` to the Node import and define the RoVO path and asset list:
+Add `existsSync` to the Node import and define the RoVo path and asset list:
 
 ```js
 import { existsSync, readFileSync } from "node:fs";
@@ -70,7 +70,7 @@ const rovoAssets = [
 ];
 ```
 
-Before each article read, assert that the file exists. After the common article loop, add exact RoVO assertions:
+Before each article read, assert that the file exists. After the common article loop, add exact RoVo assertions:
 
 ```js
 assert.equal(existsSync(new URL(rovoPath, root)), true, `${rovoPath}가 필요하다.`);
@@ -97,7 +97,7 @@ Expected: FAIL with `src/writings/2025-05-19-rovo-robust-voice-protection.md가 
 
 ```bash
 git add scripts/check-research-writings.mjs
-git commit -m "Test RoVO research writing contract"
+git commit -m "Test RoVo research writing contract"
 ```
 
 ---
@@ -129,7 +129,7 @@ pdfimages -png "/home/seungmin/.codex/attachments/7bf5f8db-890e-4a07-b44f-80736b
 Expected source mapping:
 
 - main `img-000.png`: threat overview
-- main `img-002.png`: RoVO framework
+- main `img-002.png`: RoVo framework
 - main `img-004.png`: spectrogram comparison
 - main `img-006.png`: alternating optimization
 - main `img-008.png` with `img-009.png` soft mask: user study
@@ -160,12 +160,12 @@ Open every image with the image viewer. Confirm that the framework labels, spect
 
 ```bash
 git add src/assets/writings/rovo
-git commit -m "Add RoVO research figures"
+git commit -m "Add RoVo research figures"
 ```
 
 ---
 
-### Task 3: Write the Detailed RoVO Case Study
+### Task 3: Write the Detailed RoVo Case Study
 
 **Files:**
 - Create: `src/writings/2025-05-19-rovo-robust-voice-protection.md`
@@ -181,7 +181,7 @@ Use this exact front matter and metadata values:
 
 ```markdown
 ---
-title: "RoVO: 잠재공간 교란으로 음성 복제 방어를 견고하게 만들기"
+title: "RoVo: 잠재공간 교란으로 음성 복제 방어를 견고하게 만들기"
 description: "신경 오디오 코덱의 잠재공간에서 적대적 교란을 최적화하고 약·중·강 적응형 공격과 black-box 조건에서 검증한 2024–2025 음성 보호 연구."
 lang: ko
 period: "2024 – 2025"
@@ -209,7 +209,7 @@ Use these exact labels and H2 headings:
 ## 공격자의 능력을 약·중·강 세 단계로 나눴다
 <p class="section-label">03 · Why latent space</p>
 ## 신호에 노이즈를 더하는 대신 codec embedding을 바꿨다
-<p class="section-label">04 · RoVO framework</p>
+<p class="section-label">04 · RoVo framework</p>
 ## Bark와 EnCodec 표현 위에서 보호 음성을 재구성했다
 <p class="section-label">05 · Optimization</p>
 ## 방어력과 음질을 번갈아 최적화한 PerC-AL
@@ -261,14 +261,14 @@ Use:
 
 Required result blocks:
 
-- VCTK RAW 9.6% → RoVO 82.5% average DSR.
-- Moderate attacks: RoVO 82.8% average DSR and −5.2%p; AttackVC −30.8%p, AntiFake −35.5%p, VoiceGuard −49.7%p.
-- RoVO unattacked MOS 2.53 → 2.68 after enhancement.
+- VCTK RAW 9.6% → RoVo 82.5% average DSR.
+- Moderate attacks: RoVo 82.8% average DSR and −5.2%p; AttackVC −30.8%p, AntiFake −35.5%p, VoiceGuard −49.7%p.
+- RoVo unattacked MOS 2.53 → 2.68 after enhancement.
 - Black-box ensemble: 81.6% overall DSR, 89.0% weak attacks, 77.3% stronger attacks, MOS 2.83 ± 0.46.
 - Strong white-box reconstruction: MOS 3.38–3.76, verification acceptance 15.3% average, DSR 82.1% average.
 - LLaSE-G1: 72.9% overall average DSR, 82.6% ECAPA-TDNN average.
-- MS Azure RAW→RoVO: SV2TTS 68.1→99.8, YourTTS 18.0→99.5, AVC 52.3→98.6.
-- MS Azure after enhancement: RoVO average 99.0% with 0.3%p average change; AntiFake average 94.1% with −5.6%p.
+- MS Azure RAW→RoVo: SV2TTS 68.1→99.8, YourTTS 18.0→99.5, AVC 52.3→98.6.
+- MS Azure after enhancement: RoVo average 99.0% with 0.3%p average change; AntiFake average 94.1% with −5.6%p.
 
 Use one `research-metrics` block for headline values and compact HTML tables for baseline drop, black-box summary, and Azure results. Do not copy the 36-condition paper table verbatim.
 
@@ -309,7 +309,7 @@ Expected: `Research writing typography and tone checks passed.`
 
 ```bash
 git add src/writings/2025-05-19-rovo-robust-voice-protection.md scripts/check-research-writings.mjs
-git commit -m "Add detailed RoVO research case study"
+git commit -m "Add detailed RoVo research case study"
 ```
 
 ---
@@ -322,7 +322,7 @@ git commit -m "Add detailed RoVO research case study"
 - Modify only if evidence requires it: `src/css/style.css`
 
 **Interfaces:**
-- Consumes: article Markdown, common CSS, six RoVO image assets.
+- Consumes: article Markdown, common CSS, six RoVo image assets.
 - Produces: responsive desktop/mobile HTML with no broken figures, malformed tables, or review-identifying text.
 
 - [ ] **Step 1: Build the site**
@@ -336,7 +336,7 @@ Expected: Eleventy writes `/writings/rovo-robust-voice-protection/index.html` an
 Run:
 
 ```bash
-rg -n "RoVO|2024 – 2025|Manuscript under review|2505.12686" _site/writings/rovo-robust-voice-protection/index.html _site/writings/index.html
+rg -n "RoVo|2024 – 2025|Manuscript under review|2505.12686" _site/writings/rovo-robust-voice-protection/index.html _site/writings/index.html
 rg -n "습니다|합니다|입니다|됩니다|있습니다" _site/writings/rovo-robust-voice-protection/index.html
 ```
 
@@ -372,7 +372,7 @@ If no CSS or content adjustment is required, skip this commit. Otherwise:
 
 ```bash
 git add src/css/style.css src/writings/2025-05-19-rovo-robust-voice-protection.md
-git commit -m "Polish RoVO writing layout"
+git commit -m "Polish RoVo writing layout"
 ```
 
 ---

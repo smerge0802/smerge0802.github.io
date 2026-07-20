@@ -46,7 +46,11 @@ for (const articlePath of articlePaths) {
   );
 }
 
+const incorrectRoVoCase = new RegExp(["Ro", "VO"].join(""));
+
 const rovo = readFileSync(new URL(rovoPath, root), "utf8");
+assert.doesNotMatch(rovo, incorrectRoVoCase);
+assert.match(rovo, /RoVo/);
 assert.match(rovo, /period:\s*"2024 – 2025"/);
 assert.match(rovo, /Manuscript under review/);
 assert.match(rovo, /https:\/\/arxiv\.org\/abs\/2505\.12686/);
@@ -60,8 +64,9 @@ for (const assetPath of rovoAssets) {
 }
 
 const roco = readFileSync(new URL(rocoPath, root), "utf8");
+assert.doesNotMatch(roco, incorrectRoVoCase);
 assert.match(roco, /period:\s*"2025 – 2026"/);
-assert.match(roco, /RoVO/);
+assert.match(roco, /RoVo/);
 assert.match(roco, /ICASSP 2026/);
 assert.match(roco, /10\.1109\/ICASSP55912\.2026\.11462176/);
 assert.match(roco, /https:\/\/smerge0802\.github\.io\/RoCo\//);

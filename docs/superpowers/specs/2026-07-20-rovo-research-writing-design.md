@@ -1,8 +1,8 @@
-# RoVO Research Writing Design
+# RoVo Research Writing Design
 
 ## 목적
 
-2024년부터 2025년까지 진행한 RoVO 연구를 포트폴리오의 세 번째 상세 Writing으로 추가한다. 글은 공개된 arXiv v1의 단순 요약이 아니라 사용자가 제공한 최신 본문 `RoVo_Robust Voice Protection.pdf`와 `Supplementary Materials RoVo_Robust Voice Protection.pdf`를 근거로 작성한다. 독자는 신호 수준 방어의 취약점, RoVO의 잠재공간 교란, 적응형 공격 평가, 데이터 구성, 결과와 음질 trade-off를 논문을 직접 읽지 않아도 따라갈 수 있어야 한다.
+2024년부터 2025년까지 진행한 RoVo 연구를 포트폴리오의 세 번째 상세 Writing으로 추가한다. 글은 공개된 arXiv v1의 단순 요약이 아니라 사용자가 제공한 최신 본문 `RoVo_Robust Voice Protection.pdf`와 `Supplementary Materials RoVo_Robust Voice Protection.pdf`를 근거로 작성한다. 독자는 신호 수준 방어의 취약점, RoVo의 잠재공간 교란, 적응형 공격 평가, 데이터 구성, 결과와 음질 trade-off를 논문을 직접 읽지 않아도 따라갈 수 있어야 한다.
 
 연구 기간은 `2024 – 2025`로 표시한다. 최신 원고의 상태는 `Manuscript under review`로 표기하되, 익명 심사를 해칠 수 있는 학회명, submission ID, 익명 저자 표기는 공개하지 않는다. 2025년 5월 공개된 arXiv v1은 글 마지막의 별도 논문 카드에서 선행 공개본으로 연결한다.
 
@@ -52,14 +52,14 @@ arXiv:2505.12686은 2025년 5월 19일 공개된 v1으로만 소개한다.
 - DSR은 높을수록 방어가 성공한 비율이라는 점을 첫 등장 때 설명한다.
 - MOS와 WER은 방어력과 별개의 품질·명료성 지표로 분리해서 설명한다.
 - signal-domain baseline이 특정 white-box 조건에서 더 높은 초기 DSR을 보인 경우도 숨기지 않는다.
-- 음성 향상 뒤 RoVO의 DSR이 증가한 사례는 “교란 제거 실패”와 “음성 자체의 추가 훼손”을 구분해 해석한다.
+- 음성 향상 뒤 RoVo의 DSR이 증가한 사례는 “교란 제거 실패”와 “음성 자체의 추가 훼손”을 구분해 해석한다.
 - 최신 원고가 심사 중이라는 상태와 공개 arXiv v1의 버전 차이를 명확히 적는다.
 - 논문 그림과 표의 작은 글씨만으로 정보를 전달하지 않고, 핵심 수치는 HTML 표·결과 카드·캡션에서 다시 제공한다.
 
 ## 페이지 메타데이터
 
 - 파일명: `src/writings/2025-05-19-rovo-robust-voice-protection.md`
-- 제목: `RoVO: 잠재공간 교란으로 음성 복제 방어를 견고하게 만들기`
+- 제목: `RoVo: 잠재공간 교란으로 음성 복제 방어를 견고하게 만들기`
 - 설명: 신경 오디오 코덱의 잠재공간에서 적대적 교란을 최적화하고 약·중·강 적응형 공격과 black-box 조건에서 검증한 2024–2025 음성 보호 연구
 - 기간: `2024 – 2025`
 - 개요 카드:
@@ -86,7 +86,7 @@ arXiv:2505.12686은 2025년 5월 19일 공개된 v1으로만 소개한다.
 - 방어 실패는 보호 음성으로 만든 합성 음성이 ASV에서 원 화자로 받아들여지는 경우로 정의한다.
 - 약한 공격: quantization, resampling, filtering, mel inversion 같은 단순 변환
 - 중간 공격: Spectral Masking, DeepFilterNet, MP-SENet, FlowSE, De-AntiFake 같은 enhancement·purification
-- 강한 공격: 공격자가 RoVO 구조, 목적함수와 target reference를 알고 보호 음성에서 더 자연스러운 신호를 재구성하는 white-box 조건
+- 강한 공격: 공격자가 RoVo 구조, 목적함수와 target reference를 알고 보호 음성에서 더 자연스러운 신호를 재구성하는 white-box 조건
 - black-box 조건에서는 학습에 사용하지 않은 Tortoise와 CosyVoice를 사용한다.
 
 ### 03 · Why latent space
@@ -94,17 +94,17 @@ arXiv:2505.12686은 2025년 5월 19일 공개된 v1으로만 소개한다.
 #### 신호에 노이즈를 더하는 대신 codec embedding을 바꿨다
 
 - AntiFake, AttackVC, VoiceGuard 같은 signal-domain 방어의 교란이 enhancement 모델에 의해 분리될 수 있는 이유를 설명한다.
-- RoVO는 입력 음성 `x`를 codec encoder로 `z`에 매핑하고, latent perturbation `δz`를 더한 뒤 decoder로 보호 음성 `x_rovo`를 복원한다.
+- RoVo는 입력 음성 `x`를 codec encoder로 `z`에 매핑하고, latent perturbation `δz`를 더한 뒤 decoder로 보호 음성 `x_rovo`를 복원한다.
 - 비선형 decoder를 통과한 교란은 파형에 단순 가산된 잡음이 아니라 음성 구조와 결합된 변형이 된다.
-- 스펙트로그램 그림으로 AntiFake는 향상 후 원본 구조가 복구되는 반면 RoVO는 교란이 깨끗하게 분리되지 않는 차이를 설명한다.
+- 스펙트로그램 그림으로 AntiFake는 향상 후 원본 구조가 복구되는 반면 RoVo는 교란이 깨끗하게 분리되지 않는 차이를 설명한다.
 
-### 04 · RoVO framework
+### 04 · RoVo framework
 
 #### Bark와 EnCodec 표현 위에서 보호 음성을 재구성했다
 
 - Bark의 Neural Codec Encoder, Coarse Transformer, Fine Transformer, embedding, Neural Codec Decoder 흐름을 설명한다.
 - clean reconstruction 검증에서 MOS 4.53, 원본과의 cosine similarity 0.96을 얻어 backbone 자체의 복원 성능을 먼저 확인했다.
-- RoVO 구조 그림을 원본 비율로 사용하고 모바일에서 글씨가 지나치게 작아지지 않도록 확대 가능한 단일 figure로 배치한다.
+- RoVo 구조 그림을 원본 비율로 사용하고 모바일에서 글씨가 지나치게 작아지지 않도록 확대 가능한 단일 figure로 배치한다.
 
 ### 05 · Optimization
 
@@ -143,7 +143,7 @@ arXiv:2505.12686은 2025년 5월 19일 공개된 v1으로만 소개한다.
 
 #### 재튜닝 없이 평균 DSR을 크게 높였다
 
-- VCTK threshold selection에서 평균 DSR이 RAW 9.6%에서 RoVO 82.5%로 증가한 결과를 제시한다.
+- VCTK threshold selection에서 평균 DSR이 RAW 9.6%에서 RoVo 82.5%로 증가한 결과를 제시한다.
 - 다른 다섯 코퍼스에서도 같은 VCTK 임곗값을 사용한 결과를 별도 표로 정리한다.
 - 약한 변환 공격 전체에서 보호 전후 변화량과 가장 어려운 조건을 설명한다.
 - 핵심 수치 카드에는 `82.5% VCTK 평균 DSR`, `70 speakers / 700 utterances`, `3 white-box + 2 black-box models`를 배치한다.
@@ -152,7 +152,7 @@ arXiv:2505.12686은 2025년 5월 19일 공개된 v1으로만 소개한다.
 
 #### 음성 향상 뒤에도 signal-domain baseline보다 더 많은 방어력을 남겼다
 
-- 36개 enhancement·cloning·verification 조합에서 RoVO가 평균 82.8% DSR을 유지하고 평균 하락이 5.2%p였다는 최신 본문 결과를 중심으로 설명한다.
+- 36개 enhancement·cloning·verification 조합에서 RoVo가 평균 82.8% DSR을 유지하고 평균 하락이 5.2%p였다는 최신 본문 결과를 중심으로 설명한다.
 - AttackVC, AntiFake, VoiceGuard의 평균 하락 폭 30.8%p, 35.5%p, 49.7%p와 비교한다.
 - AVC 조건의 평균 DSR 93.8%와 일부 enhancement 뒤 최대 4.4%p 상승한 사례를 설명한다.
 - MOS는 무공격 평균 2.53에서 enhancement 뒤 2.68로 제한적으로 변했다. 품질이 낮아지는 trade-off를 방어력과 함께 제시한다.
@@ -172,8 +172,8 @@ arXiv:2505.12686은 2025년 5월 19일 공개된 v1으로만 소개한다.
 
 #### 상용 화자 검증 API에서도 결과를 확인했다
 
-- MS Azure에서 RAW 대비 RoVO DSR이 SV2TTS 68.1→99.8%, YourTTS 18.0→99.5%, AVC 52.3→98.6%로 증가한 결과를 표로 제시한다.
-- enhancement 이후 RoVO 평균 DSR 99.0%, 평균 변화 0.3%p와 AntiFake 평균 94.1%, 5.6%p 하락을 구분한다.
+- MS Azure에서 RAW 대비 RoVo DSR이 SV2TTS 68.1→99.8%, YourTTS 18.0→99.5%, AVC 52.3→98.6%로 증가한 결과를 표로 제시한다.
+- enhancement 이후 RoVo 평균 DSR 99.0%, 평균 변화 0.3%p와 AntiFake 평균 94.1%, 5.6%p 하락을 구분한다.
 - 상용 API의 decision boundary가 open-source verifier와 다를 수 있어 절대값을 직접 동일시하지 않는다는 한계를 함께 적는다.
 
 ### 12 · Trade-off and limitations
@@ -181,7 +181,7 @@ arXiv:2505.12686은 2025년 5월 19일 공개된 v1으로만 소개한다.
 #### 제거하기 어려운 보호와 지각 품질 사이에 trade-off가 남았다
 
 - embedding-level perturbation은 제거하기 어렵지만 보호 음성의 MOS를 낮춘다.
-- enhancement가 RoVO를 제거하지 못하고 음성 자체를 더 훼손해 DSR이 오르는 경우를 실제 사용성의 장점으로 과장하지 않는다.
+- enhancement가 RoVo를 제거하지 못하고 음성 자체를 더 훼손해 DSR이 오르는 경우를 실제 사용성의 장점으로 과장하지 않는다.
 - 2024–2025 연구에서 평가한 언어·복제 모델·검증 임곗값 범위를 넘어선 일반화는 보장하지 않는다.
 - 연산량과 보호 음성 생성 시간, 모바일·실시간 배포 가능성은 후속 연구 항목으로 남긴다.
 - 심사 중 원고의 결과는 최종 게재 과정에서 바뀔 수 있음을 표시한다.
@@ -204,7 +204,7 @@ arXiv:2505.12686은 2025년 5월 19일 공개된 v1으로만 소개한다.
    - 역할: Neural Codec embedding 교란과 Target/SNR loss 경로
 3. `spectrogram-comparison.png`
    - 출처: 최신 본문 Figure 3
-   - 역할: AntiFake와 RoVO의 enhancement 전후 차이
+   - 역할: AntiFake와 RoVo의 enhancement 전후 차이
 4. `alternating-optimization.png`
    - 출처: 최신 본문 Figure 4
    - 역할: joint와 alternating optimization의 DSR·MOS 변화
@@ -232,7 +232,7 @@ arXiv:2505.12686은 2025년 5월 19일 공개된 v1으로만 소개한다.
 - `src/assets/writings/rovo/` 아래 최적화된 그림 6개
 - 필요할 경우 기존 공통 CSS의 publication 상태 라벨과 넓은 figure 처리만 최소 확장
 - Writing 목록에 `2024 – 2025` 기간으로 자동 노출
-- 연구 글 자동 검사에 RoVO 원고를 추가
+- 연구 글 자동 검사에 RoVo 원고를 추가
 
 오디오 샘플 플레이어, 모델 데모, 별도 프로젝트 페이지, 다운로드 가능한 최신 심사 원고는 이번 범위에 포함하지 않는다.
 
