@@ -700,6 +700,77 @@ html[data-theme="dark"] .theme-icon-moon {
   max-width: 35rem;
 }
 
+.prose .research-figure-comparison img {
+  max-width: 48rem;
+}
+
+.prose .research-table {
+  margin: 1.8rem 0 0;
+  overflow-x: auto;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.prose .research-table table {
+  min-width: 37rem;
+  margin: 0;
+}
+
+.prose .research-table th,
+.prose .research-table td {
+  padding-right: 1rem;
+}
+
+.prose .research-table td:last-child,
+.prose .research-table th:last-child {
+  padding-right: 0;
+}
+
+.prose .publication-card {
+  margin: 2rem 0 0;
+  padding: 1.3rem 1.4rem 1.35rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.prose .publication-card p {
+  margin: 0;
+}
+
+.prose .publication-card-kicker {
+  font-family: var(--mono);
+  font-size: 0.67rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.prose .publication-card-title {
+  margin-top: 0.5rem !important;
+  font-size: 1.06rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.prose .publication-card-meta {
+  margin-top: 0.45rem !important;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.prose .publication-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.2rem;
+  margin-top: 1rem !important;
+  font-size: 0.86rem;
+}
+
+.prose .publication-card-links a {
+  text-decoration-thickness: 1px;
+}
+
 .prose table {
   width: 100%;
   margin: 1.8rem 0 0;
@@ -923,5 +994,9 @@ html[data-theme="dark"] .theme-icon-moon {
 
   .prose .research-metric-value {
     font-size: 1.42rem;
+  }
+
+  .prose .publication-card {
+    padding: 1.15rem 1.1rem 1.2rem;
   }
 }
