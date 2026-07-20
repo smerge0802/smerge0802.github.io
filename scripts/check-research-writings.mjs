@@ -73,6 +73,12 @@ for (const assetPath of rocoAssets) {
   assert.match(roco, new RegExp(assetPath.replace("src", "").replaceAll("/", "\\/")));
 }
 
+const rocoGenerationChart = readFileSync(
+  new URL("src/assets/writings/roco/generation-time.svg", root),
+  "utf8",
+);
+assert.match(rocoGenerationChart, /<rect width="1000" height="580" fill="#ffffff"\/>/);
+
 const css = readFileSync(new URL("src/css/style.css", root), "utf8");
 assert.match(css, /\.prose\s*\{[^}]*font-size:\s*1\.02rem;[^}]*line-height:\s*1\.82;/s);
 assert.match(css, /\.prose h2\s*\{[^}]*font-size:\s*1\.5rem;[^}]*font-weight:\s*650;/s);

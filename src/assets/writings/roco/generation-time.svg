@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 580" role="img" aria-labelledby="title desc">
   <title id="title">RoCo와 기존 음성 보호 방법의 생성 시간 비교</title>
   <desc id="desc">5초에서 10초 길이 음성을 보호하는 데 걸린 시간을 SV2TTS, YourTTS, AVC 조건별로 비교한 가로 막대그래프다. RoCo는 각각 20초, 22초, 13초로 가장 빠르다.</desc>
-  <rect width="1000" height="540" fill="#ffffff"/>
+  <rect width="1000" height="580" fill="#ffffff"/>
   <g font-family="Pretendard, Arial, sans-serif">
     <text x="20" y="36" font-size="22" font-weight="650" fill="#111111">Generation time for defended speech</text>
     <text x="20" y="62" font-size="14" fill="#666666">5–10 second input · lower is faster · seconds</text>
