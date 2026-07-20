@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
+  <title id="title">기관별 한국어 상담 통화음성 구성</title>
+  <desc id="desc">창원시 78,114개 81.93기가바이트, 한국우편사업진흥원 10,430개 27.95기가바이트, 한국소비자원 8,741개 70.1기가바이트를 비교한 가로 막대그래프다. 막대 길이는 녹음 개수를 나타낸다.</desc>
+  <rect width="960" height="430" fill="#ffffff"/>
+  <g font-family="Arial, sans-serif" fill="#111111">
+    <text x="48" y="54" font-size="22" font-weight="700">Source call corpus by institution</text>
+    <text x="48" y="82" font-size="14" fill="#666666">Bar length: recordings · Right label: storage</text>
+
+    <text x="48" y="146" font-size="17" font-weight="600">Changwon City</text>
+    <rect x="300" y="119" width="540" height="36" rx="3" fill="#eeeeee"/>
+    <rect x="300" y="119" width="540" height="36" rx="3" fill="#151515"/>
+    <text x="316" y="143" font-size="15" font-weight="650" fill="#ffffff">78,114</text>
+    <text x="912" y="143" font-size="15" text-anchor="end">81.93 GB</text>
+
+    <text x="48" y="226" font-size="17" font-weight="600">Korea Post Promotion</text>
+    <rect x="300" y="199" width="540" height="36" rx="3" fill="#eeeeee"/>
+    <rect x="300" y="199" width="72" height="36" rx="3" fill="#555555"/>
+    <text x="388" y="223" font-size="15" font-weight="650">10,430</text>
+    <text x="912" y="223" font-size="15" text-anchor="end">27.95 GB</text>
+
+    <text x="48" y="306" font-size="17" font-weight="600">Korea Consumer Agency</text>
+    <rect x="300" y="279" width="540" height="36" rx="3" fill="#eeeeee"/>
+    <rect x="300" y="279" width="60" height="36" rx="3" fill="#777777"/>
+    <text x="376" y="303" font-size="15" font-weight="650">8,741</text>
+    <text x="912" y="303" font-size="15" text-anchor="end">70.10 GB</text>
+
+    <line x1="48" y1="354" x2="912" y2="354" stroke="#d8d8d8"/>
+    <text x="48" y="390" font-size="16" font-weight="650">Total 97,285 recordings</text>
+    <text x="912" y="390" font-size="16" text-anchor="end">Approx. 180 GB · 9 domains</text>
+  </g>
+</svg>

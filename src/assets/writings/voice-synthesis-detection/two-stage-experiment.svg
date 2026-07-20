@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+  <title id="title">Encodec-BERT 생성 음성 탐지의 2단계 실험 설계</title>
+  <desc id="desc">공통 Encodec-BERT 특징을 네 분류기에 입력해 ASVspoof 2019 LA에서 평가한 뒤 FC-layer, ResNet-18, ResNet2를 선택해 ASVspoof 2021 LA와 DF에서 평가한 흐름이다.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#444444"/>
+    </marker>
+  </defs>
+  <rect width="960" height="500" fill="#ffffff"/>
+  <g font-family="Arial, sans-serif" fill="#111111">
+    <text x="48" y="48" font-size="22" font-weight="700">Two-stage experiment</text>
+    <text x="48" y="78" font-size="14" fill="#666666">Fixed feature extractor; changing classifiers and attack conditions</text>
+
+    <rect x="48" y="112" width="188" height="278" rx="6" fill="#f4f4f4" stroke="#d5d5d5"/>
+    <text x="68" y="144" font-size="13" letter-spacing="1.4" fill="#666666">COMMON FEATURE</text>
+    <text x="68" y="183" font-size="20" font-weight="700">Encodec-BERT</text>
+    <text x="68" y="211" font-size="14" fill="#555555">audio → RVQ codes</text>
+    <text x="68" y="234" font-size="14" fill="#555555">→ BERT features</text>
+    <line x1="68" y1="261" x2="216" y2="261" stroke="#d0d0d0"/>
+    <text x="68" y="292" font-size="14">Same extractor</text>
+    <text x="68" y="314" font-size="14">across all tests</text>
+
+    <line x1="236" y1="250" x2="284" y2="250" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="286" y="112" width="278" height="278" rx="6" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+    <text x="308" y="144" font-size="13" letter-spacing="1.4" fill="#666666">STAGE 01 · 2019 LA</text>
+    <text x="308" y="176" font-size="18" font-weight="700">Compare four classifiers</text>
+    <rect x="308" y="202" width="112" height="38" rx="3" fill="#eeeeee"/>
+    <text x="364" y="226" font-size="14" text-anchor="middle">FC-layer</text>
+    <rect x="430" y="202" width="112" height="38" rx="3" fill="#eeeeee"/>
+    <text x="486" y="226" font-size="14" text-anchor="middle">Transformer</text>
+    <rect x="308" y="250" width="112" height="38" rx="3" fill="#eeeeee"/>
+    <text x="364" y="274" font-size="14" text-anchor="middle">ResNet-18</text>
+    <rect x="430" y="250" width="112" height="38" rx="3" fill="#eeeeee"/>
+    <text x="486" y="274" font-size="14" text-anchor="middle">ResNet2</text>
+    <line x1="308" y1="316" x2="542" y2="316" stroke="#d0d0d0"/>
+    <text x="308" y="346" font-size="14" font-weight="650">Selected</text>
+    <text x="375" y="346" font-size="14">FC · ResNet-18 · ResNet2</text>
+
+    <line x1="564" y1="250" x2="612" y2="250" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="614" y="112" width="298" height="278" rx="6" fill="#111111"/>
+    <text x="636" y="144" font-size="13" font-weight="700" letter-spacing="1.4" fill="#ffffff">STAGE 02 · 2021</text>
+    <text x="636" y="176" font-size="18" font-weight="700" fill="#ffffff">Evaluate distribution shifts</text>
+    <rect x="636" y="202" width="254" height="62" rx="3" fill="#ffffff"/>
+    <text x="654" y="228" font-size="16" font-weight="650">ASVspoof 2021 LA</text>
+    <text x="654" y="250" font-size="13" fill="#555555">TTS and voice conversion attacks</text>
+    <rect x="636" y="276" width="254" height="62" rx="3" fill="#ffffff"/>
+    <text x="654" y="302" font-size="16" font-weight="650">ASVspoof 2021 DF</text>
+    <text x="654" y="324" font-size="13" fill="#555555">DeepFake-focused conditions</text>
+    <text x="636" y="366" font-size="14" font-weight="700" fill="#ffffff">LA: FC-layer · DF: ResNet2</text>
+
+    <text x="48" y="446" font-size="14" fill="#666666">Metrics</text>
+    <text x="112" y="446" font-size="14" font-weight="650">Class 0 / Class 1 Accuracy · Balanced Accuracy · Accuracy · EER</text>
+  </g>
+</svg>

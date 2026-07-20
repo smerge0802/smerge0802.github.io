@@ -29,7 +29,7 @@
 - Consumes: existing `.post-item`, `.post-link`, `.post-title`, `.prose` selectors
 - Produces: reusable Korean wrapping behavior for Writing lists and articles
 
-- [ ] **Step 1: Record the failing static checks**
+- [x] **Step 1: Record the failing static checks**
 
 Run:
 
@@ -39,7 +39,7 @@ Run:
 
 Expected: PASS because the required rules are absent, confirming the current regression condition.
 
-- [ ] **Step 2: Add Korean-aware wrapping rules**
+- [x] **Step 2: Add Korean-aware wrapping rules**
 
 Add the following behavior in `src/css/style.css`:
 
@@ -66,7 +66,7 @@ Add the following behavior in `src/css/style.css`:
 
 At `max-width: 560px`, change `.post-item` to one column with a small vertical gap so the period no longer consumes title width.
 
-- [ ] **Step 3: Verify the wrapping rules are present**
+- [x] **Step 3: Verify the wrapping rules are present**
 
 Run:
 
@@ -86,7 +86,7 @@ Expected: all four responsive behaviors are reported.
 - Consumes: supplied delegated-project report and KCI paper, existing research figure/card classes
 - Produces: a detailed anonymization narrative and an institution-level corpus chart
 
-- [ ] **Step 1: Capture missing-content and tone failures**
+- [x] **Step 1: Capture missing-content and tone failures**
 
 Run:
 
@@ -96,7 +96,7 @@ rg -n "했습니다|입니다|됩니다|있습니다|CLOVA|받아쓰기|78,114|1
 
 Expected: formal polite endings are present while the detailed utility-evaluation and institution breakdown are incomplete.
 
-- [ ] **Step 2: Add the source corpus visual**
+- [x] **Step 2: Add the source corpus visual**
 
 Create `source-corpus.svg` with three horizontal bars and exact labels:
 
@@ -106,7 +106,7 @@ Create `source-corpus.svg` with three horizontal bars and exact labels:
 
 The chart must state that bar length represents recording count, while capacity is printed as a separate label.
 
-- [ ] **Step 3: Rewrite and expand the article in research prose**
+- [x] **Step 3: Rewrite and expand the article in research prose**
 
 Keep the period and publication metadata. Reorganize the body in this order:
 
@@ -123,7 +123,7 @@ Keep the period and publication metadata. Reorganize the body in this order:
 
 Every sentence must end in research prose such as `확인했다`, `사용했다`, `나타났다`, or `~다`.
 
-- [ ] **Step 4: Verify content and tone**
+- [x] **Step 4: Verify content and tone**
 
 Run:
 
@@ -144,7 +144,7 @@ Expected: the first command returns no matches; the second reports every require
 - Consumes: supplied KIISEC paper, existing Encodec-BERT and result figures
 - Produces: a detailed two-stage experiment narrative and accessible experiment-flow SVG
 
-- [ ] **Step 1: Capture missing-content and tone failures**
+- [x] **Step 1: Capture missing-content and tone failures**
 
 Run:
 
@@ -154,7 +154,7 @@ rg -n "했습니다|입니다|됩니다|있습니다|1단계|2단계|Class 0|Cla
 
 Expected: polite endings are present and the two-stage design/comparison context is incomplete.
 
-- [ ] **Step 2: Add the two-stage experiment visual**
+- [x] **Step 2: Add the two-stage experiment visual**
 
 Create `two-stage-experiment.svg` with this data flow:
 
@@ -167,7 +167,7 @@ ASVspoof 2019 LA
 
 The visual must show that the same Encodec-BERT feature extractor feeds every classifier.
 
-- [ ] **Step 3: Rewrite and expand the article in research prose**
+- [x] **Step 3: Rewrite and expand the article in research prose**
 
 Reorganize the body in this order:
 
@@ -184,7 +184,7 @@ Reorganize the body in this order:
 
 Every sentence must use research prose `~했다/~다`.
 
-- [ ] **Step 4: Verify content and tone**
+- [x] **Step 4: Verify content and tone**
 
 Run:
 
@@ -205,7 +205,7 @@ Expected: the first command returns no matches; the second reports every require
 - Consumes: `.prose`, `.research-table`, `.research-figure`, `.research-metrics`
 - Produces: `.section-label`, `.research-callout`, `.research-callout-title`
 
-- [ ] **Step 1: Confirm the components do not yet exist**
+- [x] **Step 1: Confirm the components do not yet exist**
 
 Run:
 
@@ -215,11 +215,11 @@ Run:
 
 Expected: PASS because the selectors are absent.
 
-- [ ] **Step 2: Add restrained research components**
+- [x] **Step 2: Add restrained research components**
 
 Implement mono section labels above major sections and bordered callouts for `자료 구성`, `핵심 관찰`, and `평가상의 한계`. Keep backgrounds on `var(--panel)`, borders on `var(--line)`, and body text at or above `0.88rem`.
 
-- [ ] **Step 3: Verify component use and mobile behavior**
+- [x] **Step 3: Verify component use and mobile behavior**
 
 Run:
 
@@ -238,7 +238,7 @@ Expected: both component classes appear in CSS and both articles.
 - Consumes: Tasks 1–4
 - Produces: deployable Eleventy output
 
-- [ ] **Step 1: Build the complete site**
+- [x] **Step 1: Build the complete site**
 
 Run:
 
@@ -248,7 +248,7 @@ npm run build
 
 Expected: Eleventy writes 6 HTML files with no errors.
 
-- [ ] **Step 2: Check generated copy, figures, and raw Markdown artifacts**
+- [x] **Step 2: Check generated copy, figures, and raw Markdown artifacts**
 
 Run:
 
@@ -259,7 +259,7 @@ rg -n "source-corpus.svg|two-stage-experiment.svg|CLOVA|ASSD|46.39%|11.79%" _sit
 
 Expected: no raw Markdown or polite endings; every new figure and required result appears.
 
-- [ ] **Step 3: Check repository integrity**
+- [x] **Step 3: Check repository integrity**
 
 Run:
 
