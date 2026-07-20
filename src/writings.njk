@@ -15,7 +15,11 @@ permalink: /writings/
         <li class="post-year" aria-hidden="true">{{ postYear }}</li>
       {% endif %}
       <li class="post-item">
+        {% if post.data.period %}
+        <span class="post-date post-period">{{ post.data.period }}</span>
+        {% else %}
         <time class="post-date" datetime="{{ post.date | isoDate }}">{{ post.date | shortDate }}</time>
+        {% endif %}
         <a class="post-link" href="{{ post.url }}">{{ post.data.title }}</a>
       </li>
     {% endfor %}
