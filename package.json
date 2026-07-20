@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node ./node_modules/@11ty/eleventy/cmd.cjs",
+    "check:writings": "node scripts/check-research-writings.mjs",
     "serve": "node ./node_modules/@11ty/eleventy/cmd.cjs --serve --port 8088"
   },
   "devDependencies": {
