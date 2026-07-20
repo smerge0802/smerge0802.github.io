@@ -1,6 +1,7 @@
 ---
 title: Writing on this site
 description: How posts work here — drop a markdown file in src/writings/ and push.
+hideFromWritings: true
 ---
 
 This post doubles as documentation. Every piece of writing on this site is a single

@@ -118,8 +118,27 @@ assert.match(css, /\.prose h3\s*\{[^}]*font-size:\s*1\.12rem;[^}]*font-weight:\s
 assert.match(css, /\.prose \.section-label\s*\{[^}]*font-size:\s*0\.74rem;[^}]*font-weight:\s*650;[^}]*line-height:\s*1\.3;/s);
 assert.match(css, /\.prose \.section-label \+ h2\s*\{[^}]*margin-top:\s*0\.9rem;/s);
 assert.match(css, /\.research-figure-comparison \.research-figure-scroll img\s*\{[^}]*width:\s*46rem;[^}]*max-width:\s*none;/s);
+assert.match(
+  css,
+  /\.post-item\s*\{[^}]*grid-template-columns:\s*7rem minmax\(0, 1fr\);[^}]*align-items:\s*center;/s,
+);
+assert.match(
+  css,
+  /@media\s*\(max-width:\s*560px\)[\s\S]*?\.post-item\s*\{[^}]*grid-template-columns:\s*5\.6rem minmax\(0, 1fr\);[^}]*align-items:\s*center;/s,
+);
+
+const writingsTemplate = readFileSync(new URL("src/writings.njk", root), "utf8");
+assert.doesNotMatch(writingsTemplate, /post-year/);
+assert.doesNotMatch(writingsTemplate, /lastYear/);
+assert.match(writingsTemplate, /if not post\.data\.hideFromWritings/);
+
+const writingOnSite = readFileSync(
+  new URL("src/writings/2026-06-12-writing-on-this-site.md", root),
+  "utf8",
+);
+assert.match(writingOnSite, /hideFromWritings:\s*true/);
 
 const base = readFileSync(new URL("src/_includes/base.njk", root), "utf8");
-assert.match(base, /href="\/css\/style\.css\?v=20260720-typography"/);
+assert.match(base, /href="\/css\/style\.css\?v=20260720-writings-list"/);
 
 console.log("Research writing typography and tone checks passed.");

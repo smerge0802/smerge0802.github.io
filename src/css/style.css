@@ -455,29 +455,24 @@ html[data-theme="dark"] .theme-icon-moon {
   list-style: none;
   margin: 2.5rem 0 0;
   padding: 0;
-}
-
-.post-year {
-  font-family: var(--mono);
-  font-size: 0.74rem;
-  letter-spacing: 0.18em;
-  color: var(--ink-faint);
-  margin-top: 2.6rem;
+  border-bottom: 1px solid var(--line);
 }
 
 .post-item {
   display: grid;
-  grid-template-columns: 6rem 1fr;
-  gap: 1.2rem;
-  align-items: baseline;
-  margin-top: 0.95rem;
-  padding-top: 0.95rem;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+  min-height: 4.6rem;
+  margin: 0;
+  padding: 1.15rem 0;
   border-top: 1px solid var(--line);
 }
 
 .post-date {
   font-family: var(--mono);
   font-size: 0.76rem;
+  line-height: 1.4;
   color: var(--ink-faint);
 }
 
@@ -488,6 +483,7 @@ html[data-theme="dark"] .theme-icon-moon {
 
 .post-link {
   font-size: 1.12rem;
+  line-height: 1.5;
   text-decoration: none;
   text-wrap: pretty;
   word-break: keep-all;
@@ -1083,8 +1079,11 @@ html[data-theme="dark"] .theme-icon-moon {
   }
 
   .post-item {
-    grid-template-columns: 1fr;
-    gap: 0.3rem;
+    grid-template-columns: 5.6rem minmax(0, 1fr);
+    gap: 0.9rem;
+    align-items: center;
+    min-height: 4.25rem;
+    padding: 1rem 0;
   }
 
   .post-link {
