@@ -80,6 +80,10 @@ assert.match(roco, /ICASSP 2026/);
 assert.match(roco, /10\.1109\/ICASSP55912\.2026\.11462176/);
 assert.match(roco, /https:\/\/smerge0802\.github\.io\/RoCo\//);
 assert.match(roco, /\/writings\/rovo-robust-voice-protection\//);
+assert.doesNotMatch(roco, /첫 두 저자는 동등하게 기여했다/);
+assert.doesNotMatch(roco, /Seungmin Kim\*|Dain Kim\*/);
+assert.doesNotMatch(roco, /These authors contributed equally/);
+assert.match(roco, /Seungmin Kim, Dain Kim, Sohee Park, Daeseon Choi/);
 assert.equal((roco.match(/class="section-label"/g) ?? []).length, 11);
 
 for (const assetPath of rocoAssets) {

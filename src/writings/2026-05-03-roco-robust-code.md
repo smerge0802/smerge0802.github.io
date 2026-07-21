@@ -230,12 +230,11 @@ RoCo는 2026년 5월 4–8일 스페인 바르셀로나에서 열린 IEEE ICASSP
 
 ## 연구 결과를 ICASSP 2026 프로시딩 논문으로 정리했다
 
-이 연구는 2025년에 시작해 방법과 실험을 정리했고, 2026년 ICASSP 프로시딩에 5쪽 논문으로 게재했다. IEEE Xplore DOI는 `10.1109/ICASSP55912.2026.11462176`이며, 프로시딩 페이지는 1671–1675다. 첫 두 저자는 동등하게 기여했다.
+이 연구는 2025년에 시작해 방법과 실험을 정리했고, 2026년 ICASSP 프로시딩에 5쪽 논문으로 게재했다. IEEE Xplore DOI는 `10.1109/ICASSP55912.2026.11462176`이며, 프로시딩 페이지는 1671–1675다.
 
 <div class="publication-card">
   <p class="publication-card-kicker">ICASSP 2026 · Oral · Published</p>
   <p class="publication-card-title">RoCo: Robust Code for Fast and Effective Proactive Defense against Voice Cloning Attack</p>
-  <p class="publication-card-meta">Seungmin Kim*, Dain Kim*, Sohee Park, Daeseon Choi · ICASSP 2026 · pp. 1671–1675 · May 2026</p>
-  <p class="publication-note">*These authors contributed equally to this work.</p>
+  <p class="publication-card-meta">Seungmin Kim, Dain Kim, Sohee Park, Daeseon Choi · ICASSP 2026 · pp. 1671–1675 · May 2026</p>
   <p class="publication-card-links"><a href="https://doi.org/10.1109/ICASSP55912.2026.11462176">IEEE DOI로 논문 보기</a><a href="https://smerge0802.github.io/RoCo/">음성 샘플 듣기</a><a href="/writings/rovo-robust-voice-protection/">이전 RoVo 연구 보기</a></p>
 </div>
