@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">MUTE black-box transferability</title>
+  <desc id="desc">Hallo에서 만든 보호 음성을 네 unseen talking-head model에 적용했을 때 MUTE와 가장 강한 baseline의 SyncNet 값을 비교한 차트</desc>
+  <rect width="1200" height="700" rx="28" fill="#fbfbfc"/>
+  <text x="62" y="70" font-family="Pretendard, Arial, sans-serif" font-size="28" font-weight="750" fill="#17171a">Black-box transferability</text>
+  <text x="62" y="105" font-family="Pretendard, Arial, sans-serif" font-size="17" fill="#71717a">Hallo에서 최적화한 보호 음성을 unseen model에 그대로 적용 · SyncNet ↓</text>
+  <g font-family="Pretendard, Arial, sans-serif" font-size="13" fill="#85858d">
+    <text x="250" y="644" text-anchor="middle">0</text><text x="390" y="644" text-anchor="middle">1</text><text x="530" y="644" text-anchor="middle">2</text><text x="670" y="644" text-anchor="middle">3</text><text x="810" y="644" text-anchor="middle">4</text><text x="950" y="644" text-anchor="middle">5</text><text x="1090" y="644" text-anchor="middle">6</text>
+  </g>
+  <g stroke="#e6e6e9" stroke-width="1"><path d="M250 145v468"/><path d="M390 145v468"/><path d="M530 145v468"/><path d="M670 145v468"/><path d="M810 145v468"/><path d="M950 145v468"/><path d="M1090 145v468"/></g>
+  <g font-family="Pretendard, Arial, sans-serif">
+    <text x="62" y="195" font-size="18" font-weight="700" fill="#29292e">Hallo2</text><text x="62" y="304" font-size="18" font-weight="700" fill="#29292e">Audio2Head</text><text x="62" y="413" font-size="18" font-weight="700" fill="#29292e">SadTalker</text><text x="62" y="522" font-size="18" font-weight="700" fill="#29292e">Ditto</text>
+    <g fill="#d8d8dd"><rect x="250" y="154" width="431" height="30" rx="8"/><rect x="250" y="263" width="474" height="30" rx="8"/><rect x="250" y="372" width="660" height="30" rx="8"/><rect x="250" y="481" width="491" height="30" rx="8"/></g>
+    <g fill="#654fd8"><rect x="250" y="193" width="147" height="30" rx="8"/><rect x="250" y="302" width="382" height="30" rx="8"/><rect x="250" y="411" width="587" height="30" rx="8"/><rect x="250" y="520" width="411" height="30" rx="8"/></g>
+    <g font-size="14" font-weight="650"><text x="693" y="175" fill="#686870">3.076</text><text x="409" y="214" fill="#4f3eb6">1.053</text><text x="736" y="284" fill="#686870">3.387</text><text x="644" y="323" fill="#4f3eb6">2.732</text><text x="922" y="393" fill="#686870">4.712</text><text x="849" y="432" fill="#4f3eb6">4.195</text><text x="753" y="502" fill="#686870">3.508</text><text x="673" y="541" fill="#4f3eb6">2.939</text></g>
+    <rect x="62" y="588" width="16" height="16" rx="4" fill="#d8d8dd"/><text x="88" y="601" font-size="14" fill="#686870">best baseline</text><rect x="208" y="588" width="16" height="16" rx="4" fill="#654fd8"/><text x="234" y="601" font-size="14" fill="#4f3eb6">MUTE</text>
+  </g>
+</svg>

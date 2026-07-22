@@ -5,11 +5,13 @@ const root = new URL("../", import.meta.url);
 const rovoPath = "src/writings/2025-05-19-rovo-robust-voice-protection.md";
 const rocoPath = "src/writings/2026-05-03-roco-robust-code.md";
 const navoPath = "src/writings/2026-06-15-navo-natural-voice-protection.md";
+const mutePath = "src/writings/2026-05-07-mute-talking-head-protection.md";
 const articlePaths = [
   "src/writings/2023-03-31-korean-speech-anonymization.md",
   "src/writings/2024-05-29-voice-synthesis-detection.md",
   rovoPath,
   rocoPath,
+  mutePath,
   navoPath,
 ];
 
@@ -33,6 +35,12 @@ const navoAssets = [
   "src/assets/writings/navo/gender-embedding.png",
   "src/assets/writings/navo/adaptive-attacks.png",
   "src/assets/writings/navo/navo-accepted-manuscript.pdf",
+];
+
+const muteAssets = [
+  "src/assets/writings/mute/mute-threat-model.svg",
+  "src/assets/writings/mute/mute-framework.svg",
+  "src/assets/writings/mute/mute-transferability.svg",
 ];
 
 const politeEnding = /(?:습니다|합니다|입니다|됩니다|있습니다|보였습니다|였습니다|겠습니다)/;
@@ -107,6 +115,30 @@ assert.equal((navo.match(/class="research-figure-scroll"/g) ?? []).length, 3);
 for (const assetPath of navoAssets) {
   assert.equal(existsSync(new URL(assetPath, root)), true, `${assetPath}가 필요하다.`);
   assert.match(navo, new RegExp(assetPath.replace("src", "").replaceAll("/", "\\/")));
+}
+
+const mute = readFileSync(new URL(mutePath, root), "utf8");
+assert.match(mute, /period:\s*"2026"/);
+assert.match(mute, /MUTE: Multi-Level Alignment Uncoupling Against Talking-Head Exploitation for Voice Protection/);
+assert.match(mute, /Manuscript · Under review/);
+assert.doesNotMatch(mute, /NeurIPS/i);
+assert.doesNotMatch(mute, /\.pdf(?:["')]|$)/im);
+assert.match(mute, /TalkingHead-1KH/);
+assert.match(mute, /CelebV-HQ/);
+assert.match(mute, /Hallo2/);
+assert.match(mute, /Audio2Head/);
+assert.match(mute, /SadTalker/);
+assert.match(mute, /Ditto/);
+assert.match(mute, /<td>SadTalker<\/td><td><strong>4\.195<\/strong><\/td><td>4\.712<\/td><td><strong>0\.921<\/strong><\/td><td>0\.852<\/td>/);
+assert.match(mute, /86\.1%/);
+assert.match(mute, /100명/);
+assert.match(mute, /1,000개/);
+assert.equal((mute.match(/class="section-label"/g) ?? []).length, 13);
+assert.equal((mute.match(/class="research-figure-scroll"/g) ?? []).length, 3);
+
+for (const assetPath of muteAssets) {
+  assert.equal(existsSync(new URL(assetPath, root)), true, `${assetPath}가 필요하다.`);
+  assert.match(mute, new RegExp(assetPath.replace("src", "").replaceAll("/", "\\/")));
 }
 
 const rocoGenerationChart = readFileSync(

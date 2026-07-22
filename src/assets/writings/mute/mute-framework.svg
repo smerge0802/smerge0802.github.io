@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">MUTE multi-level alignment uncoupling framework</title>
+  <desc id="desc">Representation-level degradation, alignment-level disruption, STFT robustness constraint를 두 단계 최적화로 결합하는 MUTE 구조</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f1eeff"/><stop offset="1" stop-color="#e7e2ff"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff0e8"/><stop offset="1" stop-color="#ffe1d5"/></linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#e9f8f2"/><stop offset="1" stop-color="#d8f2e8"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0l10 5-10 5z" fill="#74747d"/></marker>
+  </defs>
+  <rect width="1200" height="760" rx="28" fill="#fbfbfc"/>
+  <text x="62" y="66" font-family="Pretendard, Arial, sans-serif" font-size="28" font-weight="750" fill="#17171a">Multi-level alignment uncoupling</text>
+  <text x="62" y="101" font-family="Pretendard, Arial, sans-serif" font-size="17" fill="#71717a">서로 충돌하는 두 목적을 순서대로 최적화하고, 매 단계에 STFT 제약을 적용한다</text>
+
+  <rect x="62" y="144" width="1076" height="178" rx="22" fill="url(#g1)" stroke="#dcd4ff"/>
+  <rect x="86" y="169" width="108" height="28" rx="14" fill="#5d4bd8"/><text x="140" y="188" text-anchor="middle" font-family="Pretendard, Arial, sans-serif" font-size="12" font-weight="700" fill="#fff">PHASE 1 · 90%</text>
+  <text x="86" y="237" font-family="Pretendard, Arial, sans-serif" font-size="23" font-weight="750" fill="#29233e">Representation-level degradation</text>
+  <text x="86" y="273" font-family="Pretendard, Arial, sans-serif" font-size="15" fill="#5f5a70">25 fps frame-wise wav2vec 2.0 embedding을 시점별로 밀어낸다</text>
+  <g transform="translate(660 176)">
+    <rect width="122" height="94" rx="15" fill="#fff"/><text x="61" y="31" text-anchor="middle" font-family="Pretendard, Arial, sans-serif" font-size="13" fill="#73717f">clean</text>
+    <rect x="18" y="49" width="16" height="26" rx="4" fill="#8e7cf2"/><rect x="42" y="39" width="16" height="36" rx="4" fill="#725ee5"/><rect x="66" y="54" width="16" height="21" rx="4" fill="#a99df5"/><rect x="90" y="32" width="16" height="43" rx="4" fill="#5c47d6"/>
+  </g>
+  <path d="M797 223h62" stroke="#74747d" stroke-width="2" marker-end="url(#arrow)"/>
+  <g transform="translate(878 176)">
+    <rect width="122" height="94" rx="15" fill="#fff"/><text x="61" y="31" text-anchor="middle" font-family="Pretendard, Arial, sans-serif" font-size="13" fill="#73717f">protected</text>
+    <rect x="18" y="35" width="16" height="40" rx="4" fill="#f59b7f"/><rect x="42" y="58" width="16" height="17" rx="4" fill="#e87557"/><rect x="66" y="29" width="16" height="46" rx="4" fill="#ffb098"/><rect x="90" y="51" width="16" height="24" rx="4" fill="#df6548"/>
+  </g>
+  <text x="1058" y="231" text-anchor="middle" font-family="Pretendard, Arial, sans-serif" font-size="16" font-weight="700" fill="#5c47d6">Lemb</text>
+
+  <rect x="62" y="344" width="1076" height="178" rx="22" fill="url(#g2)" stroke="#ffd4c3"/>
+  <rect x="86" y="369" width="108" height="28" rx="14" fill="#d76343"/><text x="140" y="388" text-anchor="middle" font-family="Pretendard, Arial, sans-serif" font-size="12" font-weight="700" fill="#fff">PHASE 2 · 10%</text>
+  <text x="86" y="437" font-family="Pretendard, Arial, sans-serif" font-size="23" font-weight="750" fill="#45271f">Alignment-level disruption</text>
+  <text x="86" y="473" font-family="Pretendard, Arial, sans-serif" font-size="15" fill="#705d56">1·2차 민감도로 취약 위치를 찾고, cross-attention을 target distribution 쪽으로 재배치한다</text>
+  <g transform="translate(684 374)">
+    <g fill="#f5b49d"><rect x="0" y="0" width="24" height="24" rx="4"/><rect x="30" y="0" width="24" height="24" rx="4" opacity=".45"/><rect x="60" y="0" width="24" height="24" rx="4" opacity=".7"/><rect x="90" y="0" width="24" height="24" rx="4" opacity=".3"/><rect x="0" y="30" width="24" height="24" rx="4" opacity=".4"/><rect x="30" y="30" width="24" height="24" rx="4" opacity=".8"/><rect x="60" y="30" width="24" height="24" rx="4" opacity=".25"/><rect x="90" y="30" width="24" height="24" rx="4" opacity=".5"/><rect x="0" y="60" width="24" height="24" rx="4" opacity=".7"/><rect x="30" y="60" width="24" height="24" rx="4" opacity=".3"/><rect x="60" y="60" width="24" height="24" rx="4"/><rect x="90" y="60" width="24" height="24" rx="4" opacity=".45"/></g>
+  </g>
+  <path d="M822 418h57" stroke="#74747d" stroke-width="2" marker-end="url(#arrow)"/>
+  <g transform="translate(898 374)">
+    <g fill="#db6243"><rect x="0" y="0" width="24" height="24" rx="4" opacity=".18"/><rect x="30" y="0" width="24" height="24" rx="4" opacity=".2"/><rect x="60" y="0" width="24" height="24" rx="4"/><rect x="90" y="0" width="24" height="24" rx="4" opacity=".15"/><rect x="0" y="30" width="24" height="24" rx="4" opacity=".16"/><rect x="30" y="30" width="24" height="24" rx="4"/><rect x="60" y="30" width="24" height="24" rx="4" opacity=".22"/><rect x="90" y="30" width="24" height="24" rx="4" opacity=".18"/><rect x="0" y="60" width="24" height="24" rx="4"/><rect x="30" y="60" width="24" height="24" rx="4" opacity=".18"/><rect x="60" y="60" width="24" height="24" rx="4" opacity=".2"/><rect x="90" y="60" width="24" height="24" rx="4" opacity=".15"/></g>
+  </g>
+  <text x="1064" y="428" text-anchor="middle" font-family="Pretendard, Arial, sans-serif" font-size="16" font-weight="700" fill="#c14e31">Lattn</text>
+
+  <rect x="62" y="544" width="1076" height="152" rx="22" fill="url(#g3)" stroke="#c8eadf"/>
+  <text x="86" y="591" font-family="Pretendard, Arial, sans-serif" font-size="21" font-weight="750" fill="#1f493c">STFT robustness constraint · every step</text>
+  <text x="86" y="626" font-family="Pretendard, Arial, sans-serif" font-size="15" fill="#557068">80–7,600 Hz speech band의 high-energy 영역에 교란을 집중해 필터와 denoiser에 덜 지워지게 한다</text>
+  <g transform="translate(760 570)"><path d="M0 62c32-52 58 41 90-8s58 34 90-15 58 39 90-6" fill="none" stroke="#23966f" stroke-width="4" stroke-linecap="round"/><path d="M0 76h270" stroke="#91cdb8" stroke-width="2"/><text x="135" y="111" text-anchor="middle" font-family="Pretendard, Arial, sans-serif" font-size="13" fill="#4f7468">speech-aligned perturbation mask</text></g>
+</svg>
