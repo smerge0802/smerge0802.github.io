@@ -27,7 +27,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("year", (value) => new Date(value).getUTCFullYear());
 
   eleventyConfig.addCollection("posts", (collection) =>
-    collection.getFilteredByGlob("src/writings/*.md").sort((a, b) => b.date - a.date)
+    collection.getFilteredByGlob("src/writings/*.md").sort((a, b) => {
+      const writingOrderDelta =
+        (b.data.writingOrder ?? 0) - (a.data.writingOrder ?? 0);
+      return writingOrderDelta || b.date - a.date;
+    })
   );
 
   return {

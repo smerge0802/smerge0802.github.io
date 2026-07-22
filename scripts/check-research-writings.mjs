@@ -38,9 +38,13 @@ const navoAssets = [
 ];
 
 const muteAssets = [
-  "src/assets/writings/mute/mute-threat-model.svg",
-  "src/assets/writings/mute/mute-framework.svg",
+  "src/assets/writings/mute/paper-overview.png",
+  "src/assets/writings/mute/paper-framework.png",
+  "src/assets/writings/mute/paper-main-qualitative.webp",
+  "src/assets/writings/mute/paper-user-study.png",
   "src/assets/writings/mute/mute-transferability.svg",
+  "src/assets/writings/mute/paper-black-box-qualitative.webp",
+  "src/assets/writings/mute/paper-robustness-qualitative.webp",
 ];
 
 const politeEnding = /(?:습니다|합니다|입니다|됩니다|있습니다|보였습니다|였습니다|겠습니다)/;
@@ -119,6 +123,7 @@ for (const assetPath of navoAssets) {
 
 const mute = readFileSync(new URL(mutePath, root), "utf8");
 assert.match(mute, /period:\s*"2026"/);
+assert.match(mute, /writingOrder:\s*1/);
 assert.match(mute, /MUTE: Multi-Level Alignment Uncoupling Against Talking-Head Exploitation for Voice Protection/);
 assert.match(mute, /Manuscript · Under review/);
 assert.doesNotMatch(mute, /NeurIPS/i);
@@ -134,12 +139,19 @@ assert.match(mute, /86\.1%/);
 assert.match(mute, /100명/);
 assert.match(mute, /1,000개/);
 assert.equal((mute.match(/class="section-label"/g) ?? []).length, 13);
-assert.equal((mute.match(/class="research-figure-scroll"/g) ?? []).length, 3);
+assert.equal((mute.match(/class="research-figure-scroll"/g) ?? []).length, 7);
+assert.doesNotMatch(mute, /mute-threat-model\.svg|mute-framework\.svg/);
 
 for (const assetPath of muteAssets) {
   assert.equal(existsSync(new URL(assetPath, root)), true, `${assetPath}가 필요하다.`);
   assert.match(mute, new RegExp(assetPath.replace("src", "").replaceAll("/", "\\/")));
 }
+
+const eleventyConfig = readFileSync(new URL("eleventy.config.js", root), "utf8");
+assert.match(
+  eleventyConfig,
+  /b\.data\.writingOrder\s*\?\?\s*0[\s\S]*a\.data\.writingOrder\s*\?\?\s*0/,
+);
 
 const rocoGenerationChart = readFileSync(
   new URL("src/assets/writings/roco/generation-time.svg", root),
