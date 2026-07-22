@@ -5,13 +5,12 @@ const root = new URL("../", import.meta.url);
 const rovoPath = "src/writings/2025-05-19-rovo-robust-voice-protection.md";
 const rocoPath = "src/writings/2026-05-03-roco-robust-code.md";
 const navoPath = "src/writings/2026-06-15-navo-natural-voice-protection.md";
-const mutePath = "src/writings/2026-05-07-mute-talking-head-protection.md";
+const mutePath = "drafts/writings/2026-05-07-mute-talking-head-protection.md";
 const articlePaths = [
   "src/writings/2023-03-31-korean-speech-anonymization.md",
   "src/writings/2024-05-29-voice-synthesis-detection.md",
   rovoPath,
   rocoPath,
-  mutePath,
   navoPath,
 ];
 
@@ -38,13 +37,13 @@ const navoAssets = [
 ];
 
 const muteAssets = [
-  "src/assets/writings/mute/paper-overview.png",
-  "src/assets/writings/mute/paper-framework.png",
-  "src/assets/writings/mute/paper-main-qualitative.webp",
-  "src/assets/writings/mute/paper-user-study.png",
-  "src/assets/writings/mute/mute-transferability.svg",
-  "src/assets/writings/mute/paper-black-box-qualitative.webp",
-  "src/assets/writings/mute/paper-robustness-qualitative.webp",
+  "drafts/assets/writings/mute/paper-overview.png",
+  "drafts/assets/writings/mute/paper-framework.png",
+  "drafts/assets/writings/mute/paper-main-qualitative.webp",
+  "drafts/assets/writings/mute/paper-user-study.png",
+  "drafts/assets/writings/mute/mute-transferability.svg",
+  "drafts/assets/writings/mute/paper-black-box-qualitative.webp",
+  "drafts/assets/writings/mute/paper-robustness-qualitative.webp",
 ];
 
 const politeEnding = /(?:습니다|합니다|입니다|됩니다|있습니다|보였습니다|였습니다|겠습니다)/;
@@ -122,6 +121,16 @@ for (const assetPath of navoAssets) {
 }
 
 const mute = readFileSync(new URL(mutePath, root), "utf8");
+assert.equal(
+  existsSync(new URL("src/writings/2026-05-07-mute-talking-head-protection.md", root)),
+  false,
+  "MUTE 글이 공개 writings 디렉터리에 남아 있다.",
+);
+assert.equal(
+  existsSync(new URL("src/assets/writings/mute", root)),
+  false,
+  "MUTE 이미지가 공개 assets 디렉터리에 남아 있다.",
+);
 assert.match(mute, /period:\s*"2026"/);
 assert.match(mute, /writingOrder:\s*1/);
 assert.match(mute, /MUTE: Multi-Level Alignment Uncoupling Against Talking-Head Exploitation for Voice Protection/);
@@ -144,7 +153,7 @@ assert.doesNotMatch(mute, /mute-threat-model\.svg|mute-framework\.svg/);
 
 for (const assetPath of muteAssets) {
   assert.equal(existsSync(new URL(assetPath, root)), true, `${assetPath}가 필요하다.`);
-  assert.match(mute, new RegExp(assetPath.replace("src", "").replaceAll("/", "\\/")));
+  assert.match(mute, new RegExp(assetPath.replace("drafts", "").replaceAll("/", "\\/")));
 }
 
 const eleventyConfig = readFileSync(new URL("eleventy.config.js", root), "utf8");
