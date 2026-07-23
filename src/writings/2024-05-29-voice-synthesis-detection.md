@@ -1,5 +1,5 @@
 ---
-title: "생성 음성 탐지: Encodec-BERT 특징 추출"
+title: "Voice Synthesis Detection Using Language Model-Based Speech Feature Extraction"
 description: "오디오 코덱의 이산 코드와 BERT를 결합해 실제 음성과 생성 음성을 판별한 2023–2024 연구."
 lang: ko
 period: "2023 – 2024"

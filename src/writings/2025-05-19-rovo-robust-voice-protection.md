@@ -1,5 +1,5 @@
 ---
-title: "RoVo: 잠재공간 교란으로 음성 복제 방어를 견고하게 만들기"
+title: "RoVo: Robust Voice Protection Against Voice Cloning Attacks via Embedding-Level Adversarial Perturbations"
 description: "신경 오디오 코덱의 잠재공간에서 적대적 교란을 최적화하고 약·중·강 적응형 공격과 black-box 조건에서 검증한 2024–2025 음성 보호 연구."
 lang: ko
 period: "2024 – 2025"

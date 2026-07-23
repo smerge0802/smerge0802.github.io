@@ -1,5 +1,5 @@
 ---
-title: "RoCo: perturbation code로 음성 복제 방어를 빠르게 만들기"
+title: "RoCo: Robust Code for Fast and Effective Proactive Defense against Voice Cloning Attack"
 description: "RoVo의 neural-codec 잠재공간 방어를 discrete perturbation code, STE, two-stage optimization으로 발전시켜 강건성과 생성 속도를 함께 다룬 2025–2026 연구."
 lang: ko
 period: "2025 – 2026"

@@ -14,6 +14,29 @@ const articlePaths = [
   navoPath,
 ];
 
+const expectedEnglishTitles = new Map([
+  [
+    "src/writings/2023-03-31-korean-speech-anonymization.md",
+    "Comparison of Korean Speech De-identification Performance of Speech De-identification Model and Broadcast Voice Modulation",
+  ],
+  [
+    "src/writings/2024-05-29-voice-synthesis-detection.md",
+    "Voice Synthesis Detection Using Language Model-Based Speech Feature Extraction",
+  ],
+  [
+    rovoPath,
+    "RoVo: Robust Voice Protection Against Voice Cloning Attacks via Embedding-Level Adversarial Perturbations",
+  ],
+  [
+    rocoPath,
+    "RoCo: Robust Code for Fast and Effective Proactive Defense against Voice Cloning Attack",
+  ],
+  [
+    navoPath,
+    "NaVo: Natural Voice Protection against Voice Cloning Attacks via Generative Universal Adversarial Audio",
+  ],
+]);
+
 const rovoAssets = [
   "src/assets/writings/rovo/threat-overview.png",
   "src/assets/writings/rovo/rovo-framework.png",
@@ -51,6 +74,11 @@ const politeEnding = /(?:습니다|합니다|입니다|됩니다|있습니다|�
 for (const articlePath of articlePaths) {
   assert.equal(existsSync(new URL(articlePath, root)), true, `${articlePath}가 필요하다.`);
   const article = readFileSync(new URL(articlePath, root), "utf8");
+  assert.equal(
+    article.includes(`title: "${expectedEnglishTitles.get(articlePath)}"`),
+    true,
+    `${articlePath}는 정식 영문 논문 제목을 사용해야 한다.`,
+  );
   assert.equal(
     politeEnding.test(article),
     false,
