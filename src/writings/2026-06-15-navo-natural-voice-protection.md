@@ -1,6 +1,6 @@
 ---
 title: "NaVo: Natural Voice Protection against Voice Cloning Attacks via Generative Universal Adversarial Audio"
-description: "AudioLDM2와 조건별 LoRA로 자연스러운 Universal Adversarial Audio를 생성하고, unseen speaker와 상용 음성 복제 모델까지 평가한 Interspeech 2026 accepted 연구."
+description: "AudioLDM2와 조건별 LoRA로 자연스러운 Universal Adversarial Audio를 생성하고, unseen speaker와 상용 음성 복제 모델까지 평가한 Interspeech 2026 연구."
 lang: ko
 period: "2026"
 ---
@@ -12,7 +12,7 @@ NaVo(Natural Voice Protection)는 귀에 거슬리는 고주파 교란 대신 �
 <div class="project-meta" aria-label="연구 개요">
   <div><span>Period</span><strong>2026</strong></div>
   <div><span>Task</span><strong>Generative proactive voice protection</strong></div>
-  <div><span>Publication</span><strong>Interspeech 2026 · Accepted</strong></div>
+  <div><span>Publication</span><strong>Interspeech 2026</strong></div>
 </div>
 
 <p class="section-label">01 · Motivation</p>
@@ -278,7 +278,7 @@ NaVo는 adversarial perturbation을 감추는 방식에서 벗어나, 의미가 
 이 연구는 Interspeech 2026에 채택됐다. 아래 링크에서 이 글의 근거로 사용한 6쪽 accepted manuscript를 볼 수 있다. 첫 두 저자는 동등하게 기여했으며 저자명은 논문의 alphabetical equal-contribution 표기를 그대로 따랐다.
 
 <div class="publication-card">
-  <p class="publication-card-kicker">Interspeech 2026 · Accepted</p>
+  <p class="publication-card-kicker">Interspeech 2026</p>
   <p class="publication-card-title">NaVo: Natural Voice Protection against Voice Cloning Attacks via Generative Universal Adversarial Audio</p>
   <p class="publication-card-meta">Seoyoung Park*, Seungmin Kim*, Sohee Park, Dain Kim, Thien An Nguyen, Thien-Phuc Doan, Souhwan Jung**, Daeseon Choi**</p>
   <p class="publication-note">*These authors contributed equally and are listed in alphabetical order.</p>

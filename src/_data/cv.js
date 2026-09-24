@@ -10,7 +10,8 @@ export default {
 
   // 홈 상단 소개 문단 (lede) — 연구 관심사를 한 문단으로
   lede:
-    "I am an M.S. student at Soongsil University working on AI safety — " +
+    "I am an M.S. student at Soongsil University and a research intern at AIM Intelligence, " +
+    "working on AI safety — " +
     "adversarial robustness and the security of speech AI. My research centers on " +
     "voice protection against voice-cloning attacks, and more recently on the safety " +
     "and security of Audio Language Models (ALMs).",
@@ -19,11 +20,19 @@ export default {
   // 본인 이름은 템플릿에서 자동으로 굵게 표시됩니다.
   publications: [
     {
+      date: "2026",
+      title:
+        "MUTE: Multi-Level Alignment Uncoupling Against Talking-Head Exploitation for Voice Protection",
+      venue: "NeurIPS 2026",
+      note: "Accepted",
+      authors: "Donghyun Kim*, Jin Hong*, Seungmin Kim*, Dain Kim, Junseok Kwon, Daeseon Choi",
+      authorNote: "*These authors contributed equally and are listed in alphabetical order.",
+    },
+    {
       date: "Sep. 2026",
       title:
         "NaVo: Natural Voice Protection against Voice Cloning Attacks via Generative Universal Adversarial Audio",
       venue: "Interspeech 2026",
-      note: "Accepted",
       authors: "Seoyoung Park*, Seungmin Kim*, Sohee Park, Dain Kim, et al.",
       authorNote: "*These authors contributed equally and are listed in alphabetical order.",
     },
@@ -33,8 +42,7 @@ export default {
         "RoCo: Robust Code for Fast and Effective Proactive Defense against Voice Cloning Attack",
       venue: "ICASSP 2026",
       note: "Oral",
-      authors: "Seungmin Kim*, Dain Kim*, Sohee Park, Daeseon Choi",
-      authorNote: "*These authors contributed equally to this work.",
+      authors: "Seungmin Kim, Dain Kim, Sohee Park, Daeseon Choi",
     },
     {
       date: "Jun. 2024",
@@ -53,8 +61,13 @@ export default {
   // ── 주요 경력 ──────────────────────────────────────────────
   experience: [
     {
-      period: "2022 – 2025",
-      title: "Undergraduate Research Intern",
+      period: "Sep. 2026 – Present",
+      title: "Research Intern",
+      where: "AIM Intelligence",
+    },
+    {
+      period: "Jul. 2022 – Feb. 2025",
+      title: "Undergraduate Student Intern",
       where: "AI Safety Center, Soongsil University",
       detail:
         "Speech AI security research — deepfake-voice detection and proactive voice " +

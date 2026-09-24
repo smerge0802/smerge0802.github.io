@@ -132,7 +132,7 @@ for (const assetPath of rocoAssets) {
 
 const navo = readFileSync(new URL(navoPath, root), "utf8");
 assert.match(navo, /period:\s*"2026"/);
-assert.match(navo, /Interspeech 2026 · Accepted/);
+assert.match(navo, /<span>Publication<\/span><strong>Interspeech 2026<\/strong>/);
 assert.match(navo, /196명 · 42명 · 42명/);
 assert.match(navo, /ElevenLabs/);
 assert.match(navo, /76%/);

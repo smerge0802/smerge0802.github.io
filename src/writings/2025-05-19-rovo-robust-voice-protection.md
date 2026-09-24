@@ -5,14 +5,14 @@ lang: ko
 period: "2024 – 2025"
 ---
 
-2024년부터 2025년까지 공개 음성이 무단 음성 복제에 사용되는 것을 사전에 막는 연구를 수행했다. 이 연구를 바탕으로 RoVo(Robust Voice) 논문을 작성했고, 2025년 5월 arXiv v1을 공개한 뒤 데이터와 공격 조건을 확장했다. 확장 원고는 현재 심사 중이다.
+2024년부터 2025년까지 공개 음성이 무단 음성 복제에 사용되는 것을 사전에 막는 연구를 수행했다. 이 연구를 바탕으로 RoVo(Robust Voice) 논문을 작성했고, 2025년 5월 arXiv v1을 공개한 뒤 데이터와 공격 조건을 확장했다. 확장 원고는 현재 IEEE Access에서 심사 중이다.
 
 RoVo는 음성 파형에 작은 노이즈를 직접 더하지 않는다. 신경 오디오 코덱이 만든 잠재 표현에 적대적 교란을 넣고, 이를 다시 음성으로 복원한다. 교란을 음성 구조와 결합해 공격자가 speech enhancement나 purification을 적용해도 보호 효과가 쉽게 사라지지 않도록 설계했다.
 
 <div class="project-meta" aria-label="연구 개요">
   <div><span>Period</span><strong>2024 – 2025</strong></div>
   <div><span>Task</span><strong>Proactive voice protection</strong></div>
-  <div><span>Status</span><strong>Manuscript under review</strong></div>
+  <div><span>Status</span><strong>IEEE Access · Manuscript under review</strong></div>
 </div>
 
 <p class="section-label">01 · Research question</p>
@@ -302,10 +302,10 @@ RA_RA는 유사하다는 응답이 우세하고 RA_RB는 다르다는 응답이 
 
 2024–2025년에 수행한 연구를 바탕으로 RoVo 논문을 작성했다. 2025년 5월에는 초기 방법과 실험을 담은 arXiv v1을 공개했고, 이후 여섯 코퍼스, 단계별 적응형 공격, PerC-AL, black-box transfer, 상용 검증 API와 추가 reconstruction 공격을 포함하는 확장 원고로 발전시켰다.
 
-현재 확장 원고는 심사 중이다. 아래 arXiv 링크는 공개된 2025년 v1이며, 이 글에서 설명한 최신 확장 실험 전체와는 버전이 다르다.
+현재 확장 원고는 IEEE Access에서 심사 중이다. 아래 arXiv 링크는 공개된 2025년 v1이며, 이 글에서 설명한 최신 확장 실험 전체와는 버전이 다르다.
 
 <div class="publication-card">
-  <p class="publication-card-kicker">Manuscript under review · Expanded experiments</p>
+  <p class="publication-card-kicker">IEEE Access · Manuscript under review · Expanded experiments</p>
   <p class="publication-card-title">RoVo: Robust Voice Protection Against Voice Cloning Attacks via Embedding-Level Adversarial Perturbations</p>
   <p class="publication-card-meta">2024–2025 research · Current manuscript · Results may change during peer review</p>
 </div>
