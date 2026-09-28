@@ -362,7 +362,8 @@ html[data-theme="dark"] .theme-icon-moon {
   letter-spacing: 0.05em;
   color: var(--ink-faint);
   padding-top: 0.4rem;
-  white-space: nowrap;
+  white-space: normal;
+  line-height: 1.6;
 }
 
 .entry-body p {
