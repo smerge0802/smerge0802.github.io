@@ -197,10 +197,10 @@ const rocoGenerationChart = readFileSync(
 assert.match(rocoGenerationChart, /<rect width="1000" height="580" fill="#ffffff"\/>/);
 
 const css = readFileSync(new URL("src/css/style.css", root), "utf8");
-assert.match(css, /\.prose\s*\{[^}]*font-size:\s*1\.02rem;[^}]*line-height:\s*1\.82;/s);
-assert.match(css, /\.prose h2\s*\{[^}]*font-size:\s*1\.5rem;[^}]*font-weight:\s*650;/s);
-assert.match(css, /\.prose h3\s*\{[^}]*font-size:\s*1\.12rem;[^}]*font-weight:\s*650;[^}]*font-style:\s*normal;/s);
-assert.match(css, /\.prose \.section-label\s*\{[^}]*font-size:\s*0\.74rem;[^}]*font-weight:\s*650;[^}]*line-height:\s*1\.3;/s);
+assert.match(css, /\.prose\s*\{[^}]*font-size:\s*1rem;[^}]*line-height:\s*1\.85;/s);
+assert.match(css, /\.prose h2\s*\{[^}]*font-size:\s*1\.5rem;[^}]*font-weight:\s*600;/s);
+assert.match(css, /\.prose h3\s*\{[^}]*font-size:\s*1\.125rem;[^}]*font-weight:\s*600;[^}]*font-style:\s*normal;/s);
+assert.match(css, /\.prose \.section-label\s*\{[^}]*font-size:\s*0\.8125rem;[^}]*font-weight:\s*500;[^}]*line-height:\s*1\.5;/s);
 assert.match(css, /\.prose \.section-label \+ h2\s*\{[^}]*margin-top:\s*0\.9rem;/s);
 assert.match(css, /\.research-figure-comparison \.research-figure-scroll img\s*\{[^}]*width:\s*46rem;[^}]*max-width:\s*none;/s);
 assert.match(
@@ -224,6 +224,6 @@ const writingOnSite = readFileSync(
 assert.match(writingOnSite, /hideFromWritings:\s*true/);
 
 const base = readFileSync(new URL("src/_includes/base.njk", root), "utf8");
-assert.match(base, /href="\/css\/style\.css\?v=20260929-profile-icons"/);
+assert.match(base, /href="\/css\/style\.css\?v=20260929-neutral-type"/);
 
 console.log("Research writing typography and tone checks passed.");
