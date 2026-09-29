@@ -16,12 +16,30 @@ permalink: /
       {% for interest in home.interests %}<li>{{ interest }}</li>{% endfor %}
     </ul>
     <nav class="profile-links" aria-label="Contact and profile links">
-      <a href="mailto:{{ site.author.email }}">Email</a>
-      <a href="{{ site.author.scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-      <a href="{{ site.author.github }}" target="_blank" rel="me noopener noreferrer">GitHub</a>
-      <a href="{{ site.author.linkedin }}" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
-      <a href="{{ site.author.orcid }}" target="_blank" rel="me noopener noreferrer">ORCID</a>
-      <a href="{{ site.author.cvPath }}" target="_blank" rel="noopener" class="profile-cv">CV <span aria-hidden="true">↗</span><span class="sr-only"> (PDF)</span></a>
+      <a class="profile-icon" href="mailto:{{ site.author.email }}" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 5h17A1.5 1.5 0 0 1 22 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 17.5v-11A1.5 1.5 0 0 1 3.5 5Zm.9 2 7.6 5.2L19.6 7H4.4Zm15.6 1.8-7.5 5.1a.9.9 0 0 1-1 0L4 8.8V17h16V8.8Z"/></svg>
+        <span class="profile-link-label" aria-hidden="true">Email</span>
+      </a>
+      <a class="profile-icon" href="{{ site.author.scholar }}" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 1.7 8.6 12 14.2l10.3-5.6L12 3Zm-6.2 8.4v4.1c0 1.8 2.8 3.5 6.2 3.5s6.2-1.7 6.2-3.5v-4.1L12 14.8l-6.2-3.4Zm14.5.5v5.7h1.4v-6.5l-1.4.8Z"/></svg>
+        <span class="profile-link-label" aria-hidden="true">Google Scholar</span>
+      </a>
+      <a class="profile-icon" href="{{ site.author.github }}" aria-label="GitHub" target="_blank" rel="me noopener noreferrer">
+        <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        <span class="profile-link-label" aria-hidden="true">GitHub</span>
+      </a>
+      <a class="profile-icon" href="{{ site.author.linkedin }}" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.1 8.9H1.6V22h3.5V8.9ZM3.3 2.5a2 2 0 1 0 0 4.1 2 2 0 0 0 0-4.1Zm18.9 11.9c0-3.5-1.9-5.8-5-5.8-1.8 0-3 .9-3.5 1.8V8.9h-3.4V22h3.5v-6.5c0-1.8.9-3.5 2.8-3.5 1.8 0 2.2 1.5 2.2 3.2V22h3.4v-7.6Z"/></svg>
+        <span class="profile-link-label" aria-hidden="true">LinkedIn</span>
+      </a>
+      <a class="profile-icon" href="{{ site.author.orcid }}" aria-label="ORCID" target="_blank" rel="me noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0ZM7.37 5.38c.52 0 .94.43.94.95 0 .51-.42.94-.94.94a.95.95 0 0 1-.95-.94c0-.52.43-.95.95-.95Zm-.72 3.04h1.44v10.04H6.65V8.42Zm3.56 0h3.9c3.71 0 5.35 2.65 5.35 5.02 0 2.58-2.02 5.02-5.32 5.02h-3.93V8.42Zm1.44 1.3v7.44h2.3c3.27 0 4.03-2.48 4.03-3.72 0-2.02-1.28-3.72-4.1-3.72h-2.23Z"/></svg>
+        <span class="profile-link-label" aria-hidden="true">ORCID</span>
+      </a>
+      <a class="profile-icon" href="{{ site.author.cvPath }}" aria-label="CV (PDF)" target="_blank" rel="noopener">
+        <svg class="profile-icon-outline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5Z"/><path d="M14 3v5h5M8 12h8M8 16h6"/></svg>
+        <span class="profile-link-label" aria-hidden="true">CV (PDF)</span>
+      </a>
     </nav>
   </div>
   <div class="profile-portrait">

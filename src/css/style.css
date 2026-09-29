@@ -168,8 +168,40 @@ html[data-theme="dark"] .theme-icon-moon { display: none; }
 .profile-bio { margin: 1.5rem 0 0; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.8; }
 .research-interests { display: flex; flex-wrap: wrap; list-style: none; padding: 0; gap: 0.4rem 1.15rem; margin: 1.1rem 0 0; font-size: 0.78rem; font-weight: 550; color: var(--ink-soft); }
 .research-interests li::before { content: ""; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); vertical-align: middle; margin-right: 0.4rem; }
-.profile-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.65rem 1.2rem; margin-top: 1.45rem; font-size: 0.87rem; font-weight: 550; }
-.profile-cv { border: 1px solid var(--line); padding: 0.15rem 0.65rem; border-radius: 4px; }
+.profile-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: 1.45rem; }
+.profile-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+.profile-icon:hover, .profile-icon:focus-visible { color: var(--accent); background: var(--panel); border-color: var(--accent); text-decoration: none; }
+.profile-icon svg { width: 1.2rem; height: 1.2rem; fill: currentColor; }
+.profile-icon .profile-icon-outline { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.profile-link-label {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 0.28rem 0.5rem;
+  border-radius: 4px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.profile-icon:hover .profile-link-label, .profile-icon:focus-visible .profile-link-label { opacity: 1; visibility: visible; }
 .profile-portrait { padding-top: 0.4rem; }
 .profile-portrait img, .portrait-placeholder { display: block; width: 100%; aspect-ratio: 4 / 5; height: auto; border-radius: 6px; }
 .profile-portrait img { object-fit: cover; }
@@ -756,7 +788,6 @@ span.section-aside { color: var(--ink-faint); }
   .profile-copy h1 span { font-size: 0.95rem; margin-left: 0.35rem; }
   .profile-affiliations { font-size: 0.94rem; }
   .profile-bio { font-size: 1rem; }
-  .profile-links { gap: 0.65rem 1rem; }
   .research-interests { gap: 0.35rem 1rem; }
   .home-section { margin-top: 2.75rem; }
   .section-heading h2 { font-size: 1.3rem; }

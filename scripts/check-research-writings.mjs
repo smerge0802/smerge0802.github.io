@@ -224,6 +224,6 @@ const writingOnSite = readFileSync(
 assert.match(writingOnSite, /hideFromWritings:\s*true/);
 
 const base = readFileSync(new URL("src/_includes/base.njk", root), "utf8");
-assert.match(base, /href="\/css\/style\.css\?v=20260929-research-home"/);
+assert.match(base, /href="\/css\/style\.css\?v=20260929-profile-icons"/);
 
 console.log("Research writing typography and tone checks passed.");
