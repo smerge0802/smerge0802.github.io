@@ -205,11 +205,11 @@ assert.match(css, /\.prose \.section-label \+ h2\s*\{[^}]*margin-top:\s*0\.9rem;
 assert.match(css, /\.research-figure-comparison \.research-figure-scroll img\s*\{[^}]*width:\s*46rem;[^}]*max-width:\s*none;/s);
 assert.match(
   css,
-  /\.post-item\s*\{[^}]*grid-template-columns:\s*7rem minmax\(0, 1fr\);[^}]*align-items:\s*center;/s,
+  /\.post-item\s*\{[^}]*grid-template-columns:\s*11\.5rem minmax\(0, 1fr\);[^}]*align-items:\s*start;/s,
 );
 assert.match(
   css,
-  /@media\s*\(max-width:\s*560px\)[\s\S]*?\.post-item\s*\{[^}]*grid-template-columns:\s*5\.6rem minmax\(0, 1fr\);[^}]*align-items:\s*center;/s,
+  /@media\s*\(max-width:\s*560px\)[\s\S]*?\.post-item\s*\{[^}]*grid-template-columns:\s*minmax\(0, 1fr\);[^}]*align-items:\s*start;/s,
 );
 
 const writingsTemplate = readFileSync(new URL("src/writings.njk", root), "utf8");
@@ -224,6 +224,6 @@ const writingOnSite = readFileSync(
 assert.match(writingOnSite, /hideFromWritings:\s*true/);
 
 const base = readFileSync(new URL("src/_includes/base.njk", root), "utf8");
-assert.match(base, /href="\/css\/style\.css\?v=20260928-date-wrap"/);
+assert.match(base, /href="\/css\/style\.css\?v=20260929-research-home"/);
 
 console.log("Research writing typography and tone checks passed.");

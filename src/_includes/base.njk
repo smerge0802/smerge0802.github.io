@@ -18,16 +18,20 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="/css/style.css?v=20260928-date-wrap">
+  <link rel="stylesheet" href="/css/style.css?v=20260929-research-home">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="site-head">
     <nav class="nav" aria-label="Main">
-      <a href="/writings/" {% if page.url.startsWith("/writings") %}aria-current="page"{% endif %}>writings</a>
-      <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>about</a>
-      <a href="{{ site.author.cvPath }}" target="_blank" rel="noopener">cv</a>
+      <a class="site-brand" href="/" aria-label="Seungmin Kim home">Seungmin Kim<span aria-hidden="true">.</span></a>
+      <div class="nav-links">
+        <a href="/#about" {% if page.url == "/" %}aria-current="page"{% endif %}>About</a>
+        <a href="/#publications">Research</a>
+        <a href="/writings/" {% if page.url.startsWith("/writings") %}aria-current="page"{% endif %}>Writings</a>
+        <a href="{{ site.author.cvPath }}" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+      </div>
       <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" data-theme-toggle>
         <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path d="M12 5.3a6.7 6.7 0 1 0 0 13.4 6.7 6.7 0 0 0 0-13.4Zm0 1.6a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2ZM12 1.5c.44 0 .8.36.8.8v1.15a.8.8 0 0 1-1.6 0V2.3c0-.44.36-.8.8-.8Zm0 18.25c.44 0 .8.36.8.8v1.15a.8.8 0 0 1-1.6 0v-1.15c0-.44.36-.8.8-.8ZM2.3 11.2h1.15a.8.8 0 0 1 0 1.6H2.3a.8.8 0 0 1 0-1.6Zm18.25 0h1.15a.8.8 0 0 1 0 1.6h-1.15a.8.8 0 0 1 0-1.6ZM5.14 4.01l.82.82a.8.8 0 0 1-1.13 1.13l-.82-.82a.8.8 0 1 1 1.13-1.13Zm14.03 14.03.82.82a.8.8 0 0 1-1.13 1.13l-.82-.82a.8.8 0 0 1 1.13-1.13Zm.82-12.9-.82.82a.8.8 0 0 1-1.13-1.13l.82-.82a.8.8 0 0 1 1.13 1.13ZM5.96 19.17l-.82.82a.8.8 0 1 1-1.13-1.13l.82-.82a.8.8 0 1 1 1.13 1.13Z"/>
@@ -39,18 +43,13 @@
     </nav>
   </header>
 
-  <main id="main" class="page">
+  <main id="main" class="page {{ pageClass }}">
     {{ content | safe }}
   </main>
 
   <footer class="site-foot">
-    <p>
-      <span>© 2026 {{ site.author.name }}</span>
-      <span class="foot-sep">·</span>
-      <a href="{{ site.author.scholar }}" target="_blank" rel="noopener">scholar</a>
-      <span class="foot-sep">·</span>
-      <a href="mailto:{{ site.author.email }}">email</a>
-    </p>
+    <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+    <p>© 2026 {{ site.author.name }}</p>
   </footer>
   <script>
     (() => {

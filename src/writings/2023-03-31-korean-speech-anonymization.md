@@ -2,6 +2,7 @@
 title: "Comparison of Korean Speech De-identification Performance of Speech De-identification Model and Broadcast Voice Modulation"
 description: "97,285개 한국어 상담 통화음성에서 방송형 피치 변조와 Lightweight 음성 비식별화 기법을 비교한 2022–2023 위탁연구."
 lang: ko
+thumbnail: "/assets/writings/speech-anonymization/method-comparison.svg"
 period: "2022 – 2023"
 ---
 

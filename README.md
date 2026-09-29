@@ -9,6 +9,7 @@ AI 연구자 포트폴리오 사이트. [Eleventy(11ty)](https://www.11ty.dev/) 
 src/
 ├── _data/
 │   ├── site.json          # 사이트 제목·이름·이메일·Scholar·CV PDF 경로
+│   ├── home.json          # 홈 연구 분야·최근 소식
 │   └── cv.js              # about(홈)에 보여줄 핵심 데이터 (국제 컨퍼런스 출판 + 주요 경력)
 ├── _includes/
 │   ├── base.njk           # 공통 레이아웃 (상단 nav, footer)
@@ -42,13 +43,17 @@ description: 한 줄 요약 (선택)
 ## CV / about 수정
 
 - **전체 CV**: `src/assets/CV_ksm.pdf` 파일을 교체하면 됩니다 (같은 파일명 유지).
-  상단 `cv` 메뉴와 홈 하단 `Full CV (PDF)` 링크가 이 PDF로 연결됩니다.
+  상단 `CV` 메뉴와 홈 하단 `Download CV` 링크가 이 PDF로 연결됩니다.
   파일명을 바꾸려면 `src/_data/site.json`의 `author.cvPath`도 함께 수정하세요.
 - **about(홈) 요약본**: `src/_data/cv.js` — 한 줄 소개(`lede`), 국제 컨퍼런스 출판
   (`publications`), 주요 경력(`experience`), 연구 과제(`projects`), 학력(`education`).
   출판 항목의 저자 문자열에 `Seungmin Kim`이 있으면 자동으로 굵게 표시됩니다.
 - **이름·이메일·Scholar 링크**: `src/_data/site.json`
-- **상단 연락처 아이콘**(ORCID·Scholar·LinkedIn·Email): `src/index.njk`의 `.contact-links`
+- **프로필 사진**: `src/_data/site.json`의 `author.photo`에 `/assets/portrait.jpg` 같은 경로를 지정합니다. `null`이면 사진 자리를 비워 둡니다.
+- **프로필 링크**: `src/_data/site.json`의 `author`와 `src/index.njk`의 `.profile-links`
+- **최근 소식·연구 분야**: `src/_data/home.json`
+- **논문 그림·링크**: `src/_data/cv.js`의 각 논문에 `image`, `imageAlt`, `links`를 지정합니다.
+- **Writings 썸네일**: 글 front matter의 `thumbnail`에 공개 이미지 경로를 지정합니다.
 
 ## 로컬 개발
 
@@ -65,3 +70,11 @@ npm run serve      # http://localhost:8088
 
 레포 이름이 `smerge0802.github.io`면 루트로, 다른 이름이면
 `smerge0802.github.io/<레포명>/` 경로로 자동 배포됩니다 (워크플로우가 prefix를 알아서 처리).
+
+## 2026-09-29 디자인 미리보기
+
+- 작업 브랜치: `design/research-homepage`
+- 기존 디자인 보관 브랜치: `backup/site-before-redesign-20260929`
+- 기존 디자인 커밋: `c249491090d7c08c8ddf7d008288950f0aaa4cc1`
+- `main`은 기존 배포 버전을 유지합니다. 작업 브랜치에서 `npm run serve`로 미리봅니다.
+- 나중에 새 디자인을 배포한 뒤 되돌릴 때는 디자인 적용 커밋을 `git revert`하여 이력을 보존하고 다시 배포합니다.

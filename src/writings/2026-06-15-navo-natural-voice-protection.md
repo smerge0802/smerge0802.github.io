@@ -2,6 +2,7 @@
 title: "NaVo: Natural Voice Protection against Voice Cloning Attacks via Generative Universal Adversarial Audio"
 description: "AudioLDM2와 조건별 LoRA로 자연스러운 Universal Adversarial Audio를 생성하고, unseen speaker와 상용 음성 복제 모델까지 평가한 Interspeech 2026 연구."
 lang: ko
+thumbnail: "/assets/writings/navo/navo-framework.png"
 period: "2026"
 ---
 

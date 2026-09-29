@@ -1,0 +1,18 @@
+{
+  "interests": [
+    "AI safety",
+    "Adversarial robustness",
+    "Speech AI security"
+  ],
+  "news": [
+    {
+      "date": "Sep. 2026",
+      "text": "Joined AIM Intelligence as a Research Intern."
+    },
+    {
+      "date": "2026",
+      "text": "MUTE accepted to NeurIPS 2026.",
+      "href": "/#publications"
+    }
+  ]
+}

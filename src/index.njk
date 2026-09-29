@@ -1,85 +1,106 @@
 ---
 layout: base.njk
+pageClass: page-home
 permalink: /
 ---
-<section class="hero">
-  <h1 class="hero-name">{{ site.author.name }}</h1>
-  <p class="hero-sub">{{ site.author.nameKo }} &middot; {{ cv.tagline }}</p>
-  <p class="lede">{{ cv.lede }}</p>
-  <nav class="contact-links" aria-label="Contact links">
-    <a class="contact-link" href="https://orcid.org/0009-0002-0911-3282" aria-label="ORCID" data-label="ORCID" target="_blank" rel="me noopener noreferrer">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0ZM7.37 5.38c.52 0 .94.43.94.95 0 .51-.42.94-.94.94a.95.95 0 0 1-.95-.94c0-.52.43-.95.95-.95Zm-.72 3.04h1.44v10.04H6.65V8.42Zm3.56 0h3.9c3.71 0 5.35 2.65 5.35 5.02 0 2.58-2.02 5.02-5.32 5.02h-3.93V8.42Zm1.44 1.3v7.44h2.3c3.27 0 4.03-2.48 4.03-3.72 0-2.02-1.28-3.72-4.1-3.72h-2.23Z"/>
-      </svg>
-    </a>
-    <a class="contact-link" href="https://scholar.google.com/citations?user=TCTq818AAAAJ&amp;hl=ko" aria-label="Google Scholar" data-label="Google Scholar" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M12 3 1.7 8.6 12 14.2l10.3-5.6L12 3Zm-6.2 8.4v4.1c0 1.8 2.8 3.5 6.2 3.5s6.2-1.7 6.2-3.5v-4.1L12 14.8l-6.2-3.4Zm14.5.5v5.7h1.4v-6.5l-1.4.8Z"/>
-      </svg>
-    </a>
-    <a class="contact-link" href="https://www.linkedin.com/in/smerge0802" aria-label="LinkedIn" data-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M5.1 8.9H1.6V22h3.5V8.9ZM3.3 2.5a2 2 0 1 0 0 4.1 2 2 0 0 0 0-4.1Zm18.9 11.9c0-3.5-1.9-5.8-5-5.8-1.8 0-3 .9-3.5 1.8V8.9h-3.4V22h3.5v-6.5c0-1.8.9-3.5 2.8-3.5 1.8 0 2.2 1.5 2.2 3.2V22h3.4v-7.6Z"/>
-      </svg>
-    </a>
-    <a class="contact-link" href="mailto:kimsm0802@soongsil.ac.kr" aria-label="Email" data-label="Email">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M3.5 5h17A1.5 1.5 0 0 1 22 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 17.5v-11A1.5 1.5 0 0 1 3.5 5Zm.9 2 7.6 5.2L19.6 7H4.4Zm15.6 1.8-7.5 5.1a.9.9 0 0 1-1 0L4 8.8V17h16V8.8Z"/>
-      </svg>
-    </a>
-  </nav>
-</section>
-
-<section class="cv-section" id="education">
-  <h2 class="label">Education</h2>
-  {% for item in cv.education %}
-  <div class="entry">
-    <div class="entry-period">{{ item.period }}</div>
-    <div class="entry-body">
-      <p class="entry-title">{{ item.title }}</p>
-      {% if item.where %}<p class="entry-where">{{ item.where }}</p>{% endif %}
-      {% if item.detail %}<p class="entry-detail">{{ item.detail }}</p>{% endif %}
+<section class="profile-layout" id="about" aria-labelledby="profile-name">
+  <div class="profile-copy">
+    <p class="profile-eyebrow">AI safety &amp; speech security</p>
+    <h1 id="profile-name">{{ site.author.name }} <span lang="ko">{{ site.author.nameKo }}</span></h1>
+    <div class="profile-affiliations">
+      <p>Research Intern · <a href="https://aim-intelligence.com/">AIM Intelligence</a></p>
+      <p>M.S. Student · <a href="https://ssu.ac.kr/">Soongsil University</a></p>
     </div>
+    <p class="profile-bio">{{ cv.lede }}</p>
+    <ul class="research-interests" aria-label="Research interests">
+      {% for interest in home.interests %}<li>{{ interest }}</li>{% endfor %}
+    </ul>
+    <nav class="profile-links" aria-label="Contact and profile links">
+      <a href="mailto:{{ site.author.email }}">Email</a>
+      <a href="{{ site.author.scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      <a href="{{ site.author.github }}" target="_blank" rel="me noopener noreferrer">GitHub</a>
+      <a href="{{ site.author.linkedin }}" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
+      <a href="{{ site.author.orcid }}" target="_blank" rel="me noopener noreferrer">ORCID</a>
+      <a href="{{ site.author.cvPath }}" target="_blank" rel="noopener" class="profile-cv">CV <span aria-hidden="true">↗</span><span class="sr-only"> (PDF)</span></a>
+    </nav>
   </div>
-  {% endfor %}
-</section>
-
-<section class="cv-section" id="experience">
-  <h2 class="label">Experience</h2>
-  {% for item in cv.experience %}
-  <div class="entry">
-    <div class="entry-period">{{ item.period }}</div>
-    <div class="entry-body">
-      <p class="entry-title">{{ item.title }}</p>
-      {% if item.where %}<p class="entry-where">{{ item.where }}</p>{% endif %}
-      {% if item.detail %}<p class="entry-detail">{{ item.detail }}</p>{% endif %}
+  <div class="profile-portrait">
+    {% if site.author.photo %}
+    <img src="{{ site.author.photo }}" alt="Portrait of {{ site.author.name }}" width="440" height="520">
+    {% else %}
+    <div class="portrait-placeholder" role="img" aria-label="Space reserved for a portrait">
+      <span aria-hidden="true">Portrait</span>
     </div>
+    {% endif %}
   </div>
-  {% endfor %}
 </section>
 
-<section class="cv-section" id="publications">
-  <h2 class="label">Selected Publications</h2>
-  {% for pub in cv.publications %}
-  <div class="entry">
-    <div class="entry-period">{{ pub.date }}</div>
-    <div class="entry-body">
-      <p class="entry-title">{{ pub.title }}</p>
-      <p class="entry-where">{{ pub.venue }}{% if pub.note %} &middot; {{ pub.note }}{% endif %}</p>
-      <p class="entry-detail publication-authors">{{ pub.authors | replace("Seungmin Kim", "<strong>Seungmin Kim</strong>") | safe }}</p>
-      {% if pub.authorNote %}<p class="publication-note">{{ pub.authorNote }}</p>{% endif %}
+<section class="home-section news-section" aria-labelledby="news-title">
+  <div class="section-heading"><h2 id="news-title">News</h2><span class="section-aside">Recent updates</span></div>
+  <ul class="news-list">
+    {% for item in home.news %}
+    <li><span class="news-date">{{ item.date }}</span><p>{% if item.href %}<a href="{{ item.href }}">{{ item.text }}</a>{% else %}{{ item.text }}{% endif %}</p></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="home-section" id="publications" aria-labelledby="publications-title">
+  <div class="section-heading"><h2 id="publications-title">Selected publications</h2><a href="{{ site.author.scholar }}" target="_blank" rel="noopener noreferrer" class="section-aside">All publications <span aria-hidden="true">↗</span></a></div>
+  <div class="publication-list">
+    {% for pub in cv.publications %}
+    <article class="publication-row">
+      <div class="publication-visual">
+        {% if pub.image %}
+        <img src="{{ pub.image }}" alt="{{ pub.imageAlt }}" width="420" height="280" loading="lazy">
+        {% else %}
+        <div class="publication-monogram" aria-hidden="true"><span>{{ pub.acronym }}</span><small>{{ pub.previewLabel }}</small></div>
+        {% endif %}
+      </div>
+      <div class="publication-info">
+        <div class="publication-venue"><span>{{ pub.venue }}</span>{% if pub.note %}<span class="venue-note">{{ pub.note }}</span>{% endif %}<span class="publication-date">{{ pub.date }}</span></div>
+        <h3>{{ pub.title }}</h3>
+        <p class="publication-authors">{{ pub.authors | replace("Seungmin Kim", "<strong>Seungmin Kim</strong>") | safe }}</p>
+        {% if pub.authorNote %}<p class="publication-note">{{ pub.authorNote }}</p>{% endif %}
+        {% if pub.links %}<nav class="publication-links" aria-label="Resources for {{ pub.acronym }}">{% for link in pub.links %}<a href="{{ link.href }}">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endfor %}</nav>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  <a class="research-more" href="/writings/">Explore the research behind the papers <span aria-hidden="true">→</span></a>
+</section>
+
+<div class="background-grid">
+  <section class="home-section" id="experience" aria-labelledby="experience-title">
+    <div class="section-heading"><h2 id="experience-title">Experience</h2></div>
+    {% for item in cv.experience %}
+    <div class="background-entry">
+      <p class="background-period">{{ item.period }}</p>
+      <h3>{{ item.title }}</h3>
+      <p class="background-where">{{ item.where }}</p>
+      {% if item.detail %}<p class="background-detail">{{ item.detail }}</p>{% endif %}
     </div>
-  </div>
-  {% endfor %}
-</section>
+    {% endfor %}
+  </section>
+  <section class="home-section" id="education" aria-labelledby="education-title">
+    <div class="section-heading"><h2 id="education-title">Education</h2></div>
+    {% for item in cv.education %}
+    <div class="background-entry">
+      <p class="background-period">{{ item.period }}</p>
+      <h3>{{ item.title }}</h3>
+      {% if item.where %}<p class="background-where">{{ item.where }}</p>{% endif %}
+      {% if item.detail %}<p class="background-detail">{{ item.detail }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
+</div>
 
-<section class="cv-section" id="projects">
-  <h2 class="label">Research Projects</h2>
+<section class="home-section" id="projects" aria-labelledby="projects-title">
+  <div class="section-heading"><h2 id="projects-title">Research projects</h2></div>
   {% for item in cv.projects %}
   <div class="entry">
     <div class="entry-period">{{ item.period }}</div>
     <div class="entry-body">
-      <p class="entry-title">{{ item.title }}</p>
+      <h3 class="entry-title">{{ item.title }}</h3>
       {% if item.where %}<p class="entry-where">{{ item.where }}</p>{% endif %}
       {% if item.detail %}<p class="entry-detail">{{ item.detail }}</p>{% endif %}
     </div>
@@ -87,4 +108,4 @@ permalink: /
   {% endfor %}
 </section>
 
-<p class="cv-more"><a href="{{ site.author.cvPath }}" target="_blank" rel="noopener">Full CV (PDF) &rarr;</a></p>
+<div class="cv-download"><div><h2>More about my work</h2><p>Full publication list, projects, and academic background.</p></div><a href="{{ site.author.cvPath }}" target="_blank" rel="noopener">Download CV <span aria-hidden="true">↗</span><span class="sr-only"> (PDF)</span></a></div>

@@ -2,6 +2,7 @@
 title: "RoVo: Robust Voice Protection Against Voice Cloning Attacks via Embedding-Level Adversarial Perturbations"
 description: "신경 오디오 코덱의 잠재공간에서 적대적 교란을 최적화하고 약·중·강 적응형 공격과 black-box 조건에서 검증한 2024–2025 음성 보호 연구."
 lang: ko
+thumbnail: "/assets/writings/rovo/rovo-framework.png"
 period: "2024 – 2025"
 ---
 
