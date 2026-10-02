@@ -84,15 +84,10 @@ export default {
       venue: "IFIP SEC 2024",
       acronym: "IFIP SEC",
       previewLabel: "Authentication security",
+      links: [
+        { label: "Paper", href: "https://doi.org/10.1007/978-3-031-65175-5_21" },
+      ],
       authors: "Donghyun Kim, Seungmin Kim, Gwonsang Ryu, Daeseon Choi",
-    },
-    {
-      date: "Aug. 2023",
-      title: "Face Verifiable Anonymization in Video Surveillance",
-      venue: "WISA 2023",
-      acronym: "WISA",
-      previewLabel: "Visual privacy",
-      authors: "Sungjune Park, Hyunsik Na, Seungmin Kim, Daeseon Choi",
     },
   ],
 
@@ -149,7 +144,6 @@ export default {
       period: "2021 – 2025",
       title: "B.S. in Software, Soongsil University",
       where: "GPA 3.0 / 4.5",
-      detail: "Studied Physics for two years before changing my major to Software.",
     },
   ],
 };
