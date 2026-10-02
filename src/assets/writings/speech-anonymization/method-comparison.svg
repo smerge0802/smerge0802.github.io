@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
-  <title id="title">음성 비식별화 기법별 청취 유사도 비교</title>
-  <desc id="desc">원본과 변조 음성의 화자 유사도를 0점부터 5점까지 비교한 막대그래프. VTLN 1.52, Pitch 1.99, McAdams 2.05, Resampling 2.49이며 낮을수록 원 화자를 덜 떠올린다.</desc>
+  <title id="title">Perceived speaker similarity by anonymization method</title>
+  <desc id="desc">Original–processed speaker similarity on a scale from 0 to 5: VTLN 1.52, Pitch 1.99, McAdams 2.05, and Resampling 2.49. Lower scores mean less resemblance to the original speaker.</desc>
   <style>
     .bg { fill: #f7f7f7; }
     .grid { stroke: #d0d0d0; stroke-width: 1; }
@@ -14,8 +14,8 @@
   </style>
   <rect class="bg" width="1200" height="620" rx="4"/>
   <text class="micro" x="72" y="66">HUMAN EVALUATION · LOWER IS BETTER</text>
-  <text class="label" x="72" y="112">원본과 변조 음성의 화자 유사도</text>
-  <text class="body" x="72" y="143">0점 = 아주 다름 · 5점 = 아주 비슷함</text>
+  <text class="label" x="72" y="112">Speaker similarity: original vs. processed</text>
+  <text class="body" x="72" y="143">0 = very different · 5 = very similar</text>
 
   <line class="axis" x1="300" y1="520" x2="1040" y2="520"/>
   <line class="grid" x1="448" y1="190" x2="448" y2="520"/>

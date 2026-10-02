@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
-  <title id="title">기관별 한국어 상담 통화음성 구성</title>
-  <desc id="desc">창원시 78,114개 81.93기가바이트, 한국우편사업진흥원 10,430개 27.95기가바이트, 한국소비자원 8,741개 70.1기가바이트를 비교한 가로 막대그래프다. 막대 길이는 녹음 개수를 나타낸다.</desc>
+  <title id="title">Korean call-center recordings by source</title>
+  <desc id="desc">Recording counts and storage: Changwon City, 78,114 and 81.93 GB; Korea Postal Service Agency, 10,430 and 27.95 GB; Korea Consumer Agency, 8,741 and 70.1 GB. Bar length represents recording count.</desc>
   <rect width="960" height="430" fill="#ffffff"/>
   <g font-family="Arial, sans-serif" fill="#111111">
     <text x="48" y="54" font-size="22" font-weight="700">Source call corpus by institution</text>
@@ -12,7 +12,7 @@
     <text x="316" y="143" font-size="15" font-weight="650" fill="#ffffff">78,114</text>
     <text x="912" y="143" font-size="15" text-anchor="end">81.93 GB</text>
 
-    <text x="48" y="226" font-size="17" font-weight="600">Korea Post Promotion</text>
+    <text x="48" y="226" font-size="15" font-weight="600">Korea Postal Service Agency</text>
     <rect x="300" y="199" width="540" height="36" rx="3" fill="#eeeeee"/>
     <rect x="300" y="199" width="72" height="36" rx="3" fill="#555555"/>
     <text x="388" y="223" font-size="15" font-weight="650">10,430</text>

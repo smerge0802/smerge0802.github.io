@@ -69,7 +69,7 @@ const muteAssets = [
   "drafts/assets/writings/mute/paper-robustness-qualitative.webp",
 ];
 
-const politeEnding = /(?:습니다|합니다|입니다|됩니다|있습니다|보였습니다|였습니다|겠습니다)/;
+const koreanText = /[\u1100-\u11ff\u3130-\u318f\uac00-\ud7a3]/u;
 
 for (const articlePath of articlePaths) {
   assert.equal(existsSync(new URL(articlePath, root)), true, `${articlePath}가 필요하다.`);
@@ -80,10 +80,12 @@ for (const articlePath of articlePaths) {
     `${articlePath}는 정식 영문 논문 제목을 사용해야 한다.`,
   );
   assert.equal(
-    politeEnding.test(article),
+    koreanText.test(article),
     false,
-    `${articlePath}에 ~습니다/~합니다 문체가 남아 있다.`,
+    `${articlePath} still contains Korean text.`,
   );
+
+  assert.match(article, /^lang: en$/m, `${articlePath} must declare English as its language.`);
 
   const sectionLabels = article.match(/class="section-label"/g) ?? [];
   const levelTwoHeadings = article.match(/^##\s+/gm) ?? [];
@@ -92,6 +94,18 @@ for (const articlePath of articlePaths) {
     levelTwoHeadings.length,
     `${articlePath}의 모든 H2 앞에 장 라벨이 있어야 한다.`,
   );
+}
+
+const englishDiagrams = [
+  "src/assets/writings/speech-anonymization/evaluation-flow.svg",
+  "src/assets/writings/speech-anonymization/method-comparison.svg",
+  "src/assets/writings/speech-anonymization/source-corpus.svg",
+  "src/assets/writings/voice-synthesis-detection/two-stage-experiment.svg",
+  "src/assets/writings/roco/generation-time.svg",
+];
+for (const diagramPath of englishDiagrams) {
+  assert.doesNotMatch(readFileSync(new URL(diagramPath, root), "utf8"), koreanText,
+    `${diagramPath} still contains Korean text.`);
 }
 
 const incorrectRoVoCase = new RegExp(["Ro", "VO"].join(""));
@@ -119,7 +133,6 @@ assert.match(roco, /ICASSP 2026/);
 assert.match(roco, /10\.1109\/ICASSP55912\.2026\.11462176/);
 assert.match(roco, /https:\/\/smerge0802\.github\.io\/RoCo\//);
 assert.match(roco, /\/writings\/rovo-robust-voice-protection\//);
-assert.doesNotMatch(roco, /첫 두 저자는 동등하게 기여했다/);
 assert.doesNotMatch(roco, /Seungmin Kim\*|Dain Kim\*/);
 assert.doesNotMatch(roco, /These authors contributed equally/);
 assert.match(roco, /Seungmin Kim, Dain Kim, Sohee Park, Daeseon Choi/);
@@ -133,7 +146,7 @@ for (const assetPath of rocoAssets) {
 const navo = readFileSync(new URL(navoPath, root), "utf8");
 assert.match(navo, /period:\s*"2026"/);
 assert.match(navo, /<span>Publication<\/span><strong>Interspeech 2026<\/strong>/);
-assert.match(navo, /196명 · 42명 · 42명/);
+assert.match(navo, /196 · 42 · 42/);
 assert.match(navo, /ElevenLabs/);
 assert.match(navo, /76%/);
 assert.match(

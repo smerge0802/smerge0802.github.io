@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
-  <title id="title">Encodec-BERT 생성 음성 탐지의 2단계 실험 설계</title>
-  <desc id="desc">공통 Encodec-BERT 특징을 네 분류기에 입력해 ASVspoof 2019 LA에서 평가한 뒤 FC-layer, ResNet-18, ResNet2를 선택해 ASVspoof 2021 LA와 DF에서 평가한 흐름이다.</desc>
+  <title id="title">Two-stage evaluation of Encodec-BERT speech detection</title>
+  <desc id="desc">Four classifiers receive Encodec-BERT features for evaluation on ASVspoof 2019 LA. FC-layer, ResNet-18, and ResNet2 are then evaluated on ASVspoof 2021 LA and DF.</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#444444"/>

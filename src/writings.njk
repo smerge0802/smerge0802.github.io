@@ -5,9 +5,9 @@ pageClass: page-writings
 permalink: /writings/
 ---
 <section class="writings">
-  <p class="page-eyebrow">Behind the research</p>
+  <p class="page-eyebrow">Research notes</p>
   <h1 class="page-title">Writings</h1>
-  <p class="page-intro">A closer look at the methods, experiments, and ideas behind my work on speech AI security.</p>
+  <p class="page-intro">Notes on the methods, experiments, and results from my speech AI security research.</p>
   <ul class="post-list">
     {% for post in collections.posts %}
       {% if not post.data.hideFromWritings %}
@@ -17,7 +17,7 @@ permalink: /writings/
           {% if post.data.period %}<span class="post-date post-period">{{ post.data.period }}</span>{% else %}<time class="post-date" datetime="{{ post.date | isoDate }}">{{ post.date | shortDate }}</time>{% endif %}
           <h2><a class="post-link" href="{{ post.url }}">{{ post.data.title }}</a></h2>
           {% if post.data.description %}<p class="post-description" lang="{{ post.data.lang or 'en' }}">{{ post.data.description }}</p>{% endif %}
-          <a class="post-read" href="{{ post.url }}" aria-label="Read: {{ post.data.title }}">Read story <span aria-hidden="true">→</span></a>
+          <a class="post-read" href="{{ post.url }}" aria-label="Read: {{ post.data.title }}">Read article <span aria-hidden="true">→</span></a>
         </div>
       </li>
       {% endif %}
