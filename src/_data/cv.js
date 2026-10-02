@@ -83,7 +83,9 @@ export default {
       title: "Session Replication Attack Through QR Code Sniffing in Passkey CTAP Registration",
       venue: "IFIP SEC 2024",
       acronym: "IFIP SEC",
-      previewLabel: "Authentication security",
+      // Figure 3, p. 298 of the published paper (DOI linked below).
+      image: "/assets/publications/ifip-sec-overview.jpg",
+      imageAlt: "Session replication attack overview showing the attacker, victim, client, and server",
       links: [
         { label: "Paper", href: "https://doi.org/10.1007/978-3-031-65175-5_21" },
       ],
