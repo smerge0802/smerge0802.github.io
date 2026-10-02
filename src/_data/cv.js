@@ -2,7 +2,7 @@
 // CV 데이터 — 이 파일만 수정하면 about(홈)의 요약본이 갱신됩니다.
 // 전체 CV는 PDF(src/assets/CV_ksm.pdf)로 관리하며, 상단 "cv" 메뉴가
 // 그 PDF로 연결됩니다. 여기에는 about에 보여줄 핵심만 담습니다.
-// (국제 컨퍼런스 출판 + 주요 경력)
+// (주요 논문·심사 중 원고 + 주요 경력)
 // ─────────────────────────────────────────────────────────────
 
 export default {
@@ -16,7 +16,7 @@ export default {
     "voice protection against voice-cloning attacks, and more recently on the safety " +
     "and security of Audio Language Models (ALMs).",
 
-  // ── 국제 컨퍼런스 출판 (about에 노출되는 핵심) ──────────────
+  // ── 주요 논문·심사 중 원고 (about에 노출되는 핵심) ──────────────
   // 본인 이름은 템플릿에서 자동으로 굵게 표시됩니다.
   publications: [
     {
@@ -39,10 +39,11 @@ export default {
       image: "/assets/writings/navo/navo-framework.png",
       imageAlt: "NaVo generation and voice protection framework",
       links: [
-        { label: "Paper", href: "/assets/writings/navo/navo-accepted-manuscript.pdf" },
+        { label: "Paper", href: "https://www.isca-archive.org/interspeech_2026/park26g_interspeech.html" },
+        { label: "Project", href: "https://smerge0802.github.io/NaVo/" },
         { label: "Research story", href: "/writings/navo-natural-voice-protection/" },
       ],
-      authors: "Seoyoung Park*, Seungmin Kim*, Sohee Park, Dain Kim, et al.",
+      authors: "Seoyoung Park*, Seungmin Kim*, Sohee Park, Dain Kim, Thien An Nguyen, Thien-Phuc Doan, Souhwan Jung, Daeseon Choi",
       authorNote: "*These authors contributed equally and are listed in alphabetical order.",
     },
     {
@@ -60,6 +61,22 @@ export default {
       ],
       note: "Oral",
       authors: "Seungmin Kim, Dain Kim, Sohee Park, Daeseon Choi",
+    },
+    {
+      date: "2026",
+      title:
+        "RoVo: Robust Voice Protection Against Voice Cloning Attacks via Embedding-Level Adversarial Perturbations",
+      venue: "IEEE Access",
+      acronym: "RoVo",
+      image: "/assets/writings/rovo/rovo-framework.png",
+      imageAlt: "RoVo embedding-level voice protection framework",
+      note: "Under review",
+      links: [
+        { label: "arXiv (preprint)", href: "https://arxiv.org/abs/2505.12686" },
+        { label: "Project", href: "https://smerge0802.github.io/RoVo/" },
+        { label: "Research story", href: "/writings/rovo-robust-voice-protection/" },
+      ],
+      authors: "Seungmin Kim, Sohee Park, Dain Kim, Donghyun Kim, Jisu Lee, Daeseon Choi",
     },
     {
       date: "Jun. 2024",
@@ -132,6 +149,7 @@ export default {
       period: "2021 – 2025",
       title: "B.S. in Software, Soongsil University",
       where: "GPA 3.0 / 4.5",
+      detail: "Studied Physics for two years before changing my major to Software.",
     },
   ],
 };

@@ -6,7 +6,7 @@ thumbnail: "/assets/writings/navo/navo-framework.png"
 period: "2026"
 ---
 
-2026년에는 음성 복제 방어를 발화마다 다시 최적화하는 방식에서 벗어나, 한 번 학습한 생성 모델이 새로운 화자에게 곧바로 적용할 수 있는 **Universal Adversarial Audio(UAA)** 연구를 수행했다. 이 연구를 바탕으로 `NaVo: Natural Voice Protection against Voice Cloning Attacks via Generative Universal Adversarial Audio`를 작성했고, 논문은 Interspeech 2026에 채택됐다.
+2026년에는 음성 복제 방어를 발화마다 다시 최적화하는 방식에서 벗어나, 한 번 학습한 생성 모델이 새로운 화자에게 곧바로 적용할 수 있는 **Universal Adversarial Audio(UAA)** 연구를 수행했다. 이 연구를 바탕으로 `NaVo: Natural Voice Protection against Voice Cloning Attacks via Generative Universal Adversarial Audio`를 작성했고, 논문은 Interspeech 2026에 게재됐다.
 
 NaVo(Natural Voice Protection)는 귀에 거슬리는 고주파 교란 대신 빗소리, 여러 사람이 말하는 소리, 음악처럼 실제 환경에서 자연스럽게 들리는 배경음을 생성한다. 생성된 배경음은 원 음성과 17 dB SNR로 섞이며, 사람에게는 상황에 맞는 ambient audio로 들리지만 voice cloning model의 speaker encoder에는 화자 정체성을 흐리는 adversarial signal로 작동하도록 학습했다.
 
@@ -270,18 +270,18 @@ Filtering과 spectral masking은 clean 조건보다 DSR을 오히려 높이는 �
   </ul>
 </div>
 
-<p class="section-label">13 · Accepted paper</p>
+<p class="section-label">13 · Paper and demo</p>
 
 ## 자연음을 이용한 생성형 음성 보호 연구를 Interspeech 2026 논문으로 정리했다
 
 NaVo는 adversarial perturbation을 감추는 방식에서 벗어나, 의미가 있는 ambient audio를 직접 생성하는 proactive defense를 제안했다. Distributional target과 modular LoRA를 결합해 unseen speaker에 재사용할 수 있는 UAA를 학습했고, white-box SV2TTS·CosyVoice뿐 아니라 black-box Tortoise와 상용 ElevenLabs, adaptive purification까지 평가했다.
 
-이 연구는 Interspeech 2026에 채택됐다. 아래 링크에서 이 글의 근거로 사용한 6쪽 accepted manuscript를 볼 수 있다. 첫 두 저자는 동등하게 기여했으며 저자명은 논문의 alphabetical equal-contribution 표기를 그대로 따랐다.
+이 연구는 Interspeech 2026에 게재됐으며 ISCA Archive에서 공식 논문을 확인할 수 있다. 프로젝트 페이지에서는 NaVo로 보호한 음성과 복제 음성의 데모를 들을 수 있다. 이 글의 근거로 사용한 6쪽 accepted manuscript도 함께 제공한다. 첫 두 저자는 동등하게 기여했으며 저자명은 논문의 alphabetical equal-contribution 표기를 그대로 따랐다.
 
 <div class="publication-card">
   <p class="publication-card-kicker">Interspeech 2026</p>
   <p class="publication-card-title">NaVo: Natural Voice Protection against Voice Cloning Attacks via Generative Universal Adversarial Audio</p>
   <p class="publication-card-meta">Seoyoung Park*, Seungmin Kim*, Sohee Park, Dain Kim, Thien An Nguyen, Thien-Phuc Doan, Souhwan Jung**, Daeseon Choi**</p>
   <p class="publication-note">*These authors contributed equally and are listed in alphabetical order.</p>
-  <p class="publication-card-links"><a href="/assets/writings/navo/navo-accepted-manuscript.pdf">Accepted manuscript PDF 보기</a><a href="/writings/roco-robust-code/">RoCo 연구 보기</a><a href="/writings/rovo-robust-voice-protection/">RoVo 연구 보기</a></p>
+  <p class="publication-card-links"><a href="https://www.isca-archive.org/interspeech_2026/park26g_interspeech.html">ISCA Archive에서 논문 보기</a><a href="https://smerge0802.github.io/NaVo/">프로젝트 · 음성 데모 듣기</a><a href="/assets/writings/navo/navo-accepted-manuscript.pdf">Accepted manuscript PDF 보기</a><a href="/writings/roco-robust-code/">RoCo 연구 보기</a><a href="/writings/rovo-robust-voice-protection/">RoVo 연구 보기</a></p>
 </div>

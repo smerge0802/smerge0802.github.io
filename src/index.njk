@@ -53,6 +53,31 @@ permalink: /
   </div>
 </section>
 
+<div class="background-grid">
+  <section class="home-section" id="experience" aria-labelledby="experience-title">
+    <div class="section-heading"><h2 id="experience-title">Experience</h2></div>
+    {% for item in cv.experience %}
+    <div class="background-entry">
+      <p class="background-period">{{ item.period }}</p>
+      <h3>{{ item.title }}</h3>
+      <p class="background-where">{{ item.where }}</p>
+      {% if item.detail %}<p class="background-detail">{{ item.detail }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
+  <section class="home-section" id="education" aria-labelledby="education-title">
+    <div class="section-heading"><h2 id="education-title">Education</h2></div>
+    {% for item in cv.education %}
+    <div class="background-entry">
+      <p class="background-period">{{ item.period }}</p>
+      <h3>{{ item.title }}</h3>
+      {% if item.where %}<p class="background-where">{{ item.where }}</p>{% endif %}
+      {% if item.detail %}<p class="background-detail">{{ item.detail }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
+</div>
+
 <section class="home-section news-section" aria-labelledby="news-title">
   <div class="section-heading"><h2 id="news-title">News</h2><span class="section-aside">Recent updates</span></div>
   <ul class="news-list">
@@ -86,31 +111,6 @@ permalink: /
   </div>
   <a class="research-more" href="/writings/">Explore the research behind the papers <span aria-hidden="true">→</span></a>
 </section>
-
-<div class="background-grid">
-  <section class="home-section" id="experience" aria-labelledby="experience-title">
-    <div class="section-heading"><h2 id="experience-title">Experience</h2></div>
-    {% for item in cv.experience %}
-    <div class="background-entry">
-      <p class="background-period">{{ item.period }}</p>
-      <h3>{{ item.title }}</h3>
-      <p class="background-where">{{ item.where }}</p>
-      {% if item.detail %}<p class="background-detail">{{ item.detail }}</p>{% endif %}
-    </div>
-    {% endfor %}
-  </section>
-  <section class="home-section" id="education" aria-labelledby="education-title">
-    <div class="section-heading"><h2 id="education-title">Education</h2></div>
-    {% for item in cv.education %}
-    <div class="background-entry">
-      <p class="background-period">{{ item.period }}</p>
-      <h3>{{ item.title }}</h3>
-      {% if item.where %}<p class="background-where">{{ item.where }}</p>{% endif %}
-      {% if item.detail %}<p class="background-detail">{{ item.detail }}</p>{% endif %}
-    </div>
-    {% endfor %}
-  </section>
-</div>
 
 <section class="home-section" id="projects" aria-labelledby="projects-title">
   <div class="section-heading"><h2 id="projects-title">Research projects</h2></div>
