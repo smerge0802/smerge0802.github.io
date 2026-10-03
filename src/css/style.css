@@ -206,7 +206,7 @@ html[data-theme="dark"] .theme-icon-moon { display: none; }
 .profile-icon:hover .profile-link-label, .profile-icon:focus-visible .profile-link-label { opacity: 1; visibility: visible; }
 .profile-portrait { padding-top: 0.4rem; }
 .profile-portrait img, .portrait-placeholder { display: block; width: 100%; aspect-ratio: 4 / 5; height: auto; border-radius: 6px; }
-.profile-portrait img { object-fit: cover; }
+.profile-portrait img { aspect-ratio: auto; object-fit: cover; }
 .portrait-placeholder { position: relative; border: 1px solid var(--line); background: var(--panel); }
 .portrait-placeholder span { position: absolute; bottom: 1rem; width: 100%; text-align: center; color: var(--ink-faint); font-size: 0.66rem; letter-spacing: 0.15em; text-transform: uppercase; }
 
