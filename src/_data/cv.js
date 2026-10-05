@@ -10,7 +10,7 @@ export default {
 
   // 홈 상단 소개 문단 (lede) — 연구 관심사를 한 문단으로
   lede:
-    "I am an M.S. student at Soongsil University and a research intern at AIM Intelligence, " +
+    "I am an M.S. student in AI Convergence Security at Soongsil University and a research intern at AIM Intelligence, " +
     "working on AI safety — " +
     "adversarial robustness and the security of speech AI. My research centers on " +
     "voice protection against voice-cloning attacks, and more recently on the safety " +
@@ -138,7 +138,7 @@ export default {
   education: [
     {
       period: "2025 – 2027",
-      title: "M.S. in Software, Soongsil University",
+      title: "M.S. in AI Convergence Security, Soongsil University",
       where: "Expected Feb. 2027 · GPA 4.5 / 4.5",
       detail: "Research focus: AI safety, adversarial robustness, speech AI security.",
     },
