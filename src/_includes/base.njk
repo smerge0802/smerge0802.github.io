@@ -18,7 +18,7 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="/css/style.css?v=20260929-neutral-type">
+  <link rel="stylesheet" href="/css/style.css?v=20261110-mute-media">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -30,6 +30,7 @@
         <a href="/#about" {% if page.url == "/" %}aria-current="page"{% endif %}>About</a>
         <a href="/#publications">Research</a>
         <a href="/writings/" {% if page.url.startsWith("/writings") %}aria-current="page"{% endif %}>Writings</a>
+        <a href="/media/" {% if page.url.startsWith("/media") %}aria-current="page"{% endif %}>Media</a>
         <a href="{{ site.author.cvPath }}" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
       </div>
       <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" data-theme-toggle>
