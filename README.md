@@ -54,6 +54,8 @@ description: 한 줄 요약 (선택)
 - **최근 소식·연구 분야**: `src/_data/home.json`
 - **논문 그림·링크**: `src/_data/cv.js`의 각 논문에 `image`, `imageAlt`, `links`를 지정합니다.
 - **Writings 썸네일**: 글 front matter의 `thumbnail`에 공개 이미지 경로를 지정합니다.
+- **기사·인터뷰**: `src/_data/media.json`에서 매체, 원문 제목, 발행일, 링크, 짧은 요약을 관리합니다. `/media/`에 연구별로 모아 표시하고, `featured: true`인 기사는 홈에도 표시합니다. 영상은 공식 YouTube 플레이어를 사용합니다.
+- **MUTE 공개 글**: `src/writings/2026-05-07-mute-talking-head-protection.md`와 `src/assets/writings/mute/`에서 관리합니다. 본문과 그림은 arXiv:2611.11989의 공개 버전 기준입니다.
 
 ## 로컬 개발
 

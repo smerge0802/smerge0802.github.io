@@ -1,0 +1,57 @@
+---
+layout: base.njk
+title: Media
+description: "Interviews and selected press coverage of MUTE and RoCo, research on proactive voice protection by Seungmin Kim and collaborators."
+pageClass: page-media
+permalink: /media/
+---
+<header class="media-head">
+  <p class="page-eyebrow">Research in the news</p>
+  <h1 class="page-title">Media</h1>
+  <p class="page-intro">Interviews and selected coverage of our work on voice protection. Original Korean reports are linked alongside the papers and research stories.</p>
+  <nav class="media-jump-links" aria-label="Browse media coverage">
+    <a href="#video">Video interview</a>
+    {% for group in media.groups %}<a href="#{{ group.id }}">{{ group.name }} <span>{{ group.articles | length }}</span></a>{% endfor %}
+  </nav>
+</header>
+
+<section class="media-video" id="video" aria-labelledby="video-title">
+  <div class="video-frame">
+    <iframe src="{{ media.video.embedUrl }}" title="YTN Science report on MUTE, featuring an interview with Seungmin Kim" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+  </div>
+  <div class="video-copy">
+    <p class="media-meta"><span>{{ media.video.source }}</span><time datetime="{{ media.video.date }}">{{ media.video.dateLabel }}</time></p>
+    <p class="media-kind">Video interview · {{ media.video.duration }}</p>
+    <h2 id="video-title" lang="ko">{{ media.video.title }}</h2>
+    <p>{{ media.video.summary }}</p>
+    <a class="media-action" href="{{ media.video.url }}" target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
+{% for group in media.groups %}
+<section class="media-group home-section" id="{{ group.id }}" aria-labelledby="{{ group.id }}-title">
+  <div class="section-heading"><h2 id="{{ group.id }}-title">{{ group.name }}</h2><span class="section-aside">{{ group.venue }}</span></div>
+  <div class="media-group-intro">
+    <p>{{ group.description }}</p>
+    <nav class="publication-links" aria-label="Research resources for {{ group.name }}">
+      <a href="{{ group.paper }}">Paper <span aria-hidden="true">↗</span></a>
+      <a href="{{ group.project }}">Project <span aria-hidden="true">↗</span></a>
+      <a href="{{ group.story }}">Research story <span aria-hidden="true">→</span></a>
+      {% if group.id == "mute" %}<a href="#video">Video interview <span aria-hidden="true">↑</span></a>{% endif %}
+    </nav>
+  </div>
+  <ul class="press-list">
+    {% for item in group.articles %}
+    <li class="press-item">
+      <div class="press-source"><span>{{ item.source }}</span><time datetime="{{ item.date }}">{{ item.dateLabel }}</time></div>
+      <div class="press-copy">
+        <h3 lang="ko"><a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }} <span aria-hidden="true">↗</span></a></h3>
+        <p>{{ item.summary }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
+
+<p class="media-footnote">Headlines are shown in their original language. Each link opens the publisher's report.</p>

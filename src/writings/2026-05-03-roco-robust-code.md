@@ -235,5 +235,5 @@ The study began in 2025 and was published as a five-page paper in the ICASSP 202
   <p class="publication-card-kicker">ICASSP 2026 · Oral · Published</p>
   <p class="publication-card-title">RoCo: Robust Code for Fast and Effective Proactive Defense against Voice Cloning Attack</p>
   <p class="publication-card-meta">Seungmin Kim, Dain Kim, Sohee Park, Daeseon Choi · ICASSP 2026 · pp. 1671–1675 · May 2026</p>
-  <p class="publication-card-links"><a href="https://doi.org/10.1109/ICASSP55912.2026.11462176">Paper (IEEE DOI)</a><a href="https://smerge0802.github.io/RoCo/">Audio samples</a><a href="/writings/rovo-robust-voice-protection/">Earlier work: RoVo</a></p>
+  <p class="publication-card-links"><a href="https://doi.org/10.1109/ICASSP55912.2026.11462176">Paper (IEEE DOI)</a><a href="https://smerge0802.github.io/RoCo/">Audio samples</a><a href="/media/#roco">Press coverage</a><a href="/writings/rovo-robust-voice-protection/">Earlier work: RoVo</a></p>
 </div>
