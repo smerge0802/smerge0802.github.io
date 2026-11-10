@@ -5,16 +5,18 @@ const root = new URL("../", import.meta.url);
 const rovoPath = "src/writings/2025-05-19-rovo-robust-voice-protection.md";
 const rocoPath = "src/writings/2026-05-03-roco-robust-code.md";
 const navoPath = "src/writings/2026-06-15-navo-natural-voice-protection.md";
-const mutePath = "drafts/writings/2026-05-07-mute-talking-head-protection.md";
+const mutePath = "src/writings/2026-05-07-mute-talking-head-protection.md";
 const articlePaths = [
   "src/writings/2023-03-31-korean-speech-anonymization.md",
   "src/writings/2024-05-29-voice-synthesis-detection.md",
   rovoPath,
   rocoPath,
   navoPath,
+  mutePath,
 ];
 
 const expectedEnglishTitles = new Map([
+  [mutePath, "MUTE: Multi-Level Alignment Uncoupling Against Talking-Head Exploitation for Voice Protection"],
   [
     "src/writings/2023-03-31-korean-speech-anonymization.md",
     "Comparison of Korean Speech De-identification Performance of Speech De-identification Model and Broadcast Voice Modulation",
@@ -60,13 +62,13 @@ const navoAssets = [
 ];
 
 const muteAssets = [
-  "drafts/assets/writings/mute/paper-overview.png",
-  "drafts/assets/writings/mute/paper-framework.png",
-  "drafts/assets/writings/mute/paper-main-qualitative.webp",
-  "drafts/assets/writings/mute/paper-user-study.png",
-  "drafts/assets/writings/mute/mute-transferability.svg",
-  "drafts/assets/writings/mute/paper-black-box-qualitative.webp",
-  "drafts/assets/writings/mute/paper-robustness-qualitative.webp",
+  "src/assets/writings/mute/paper-overview.png",
+  "src/assets/writings/mute/paper-framework.png",
+  "src/assets/writings/mute/paper-main-qualitative.webp",
+  "src/assets/writings/mute/paper-user-study.png",
+  "src/assets/writings/mute/mute-transferability.svg",
+  "src/assets/writings/mute/paper-black-box-qualitative.webp",
+  "src/assets/writings/mute/paper-robustness-qualitative.webp",
 ];
 
 const koreanText = /[\u1100-\u11ff\u3130-\u318f\uac00-\ud7a3]/u;
@@ -162,39 +164,30 @@ for (const assetPath of navoAssets) {
 }
 
 const mute = readFileSync(new URL(mutePath, root), "utf8");
-assert.equal(
-  existsSync(new URL("src/writings/2026-05-07-mute-talking-head-protection.md", root)),
-  false,
-  "MUTE 글이 공개 writings 디렉터리에 남아 있다.",
-);
-assert.equal(
-  existsSync(new URL("src/assets/writings/mute", root)),
-  false,
-  "MUTE 이미지가 공개 assets 디렉터리에 남아 있다.",
-);
 assert.match(mute, /period:\s*"2026"/);
 assert.match(mute, /writingOrder:\s*1/);
 assert.match(mute, /MUTE: Multi-Level Alignment Uncoupling Against Talking-Head Exploitation for Voice Protection/);
-assert.match(mute, /Manuscript · Under review/);
-assert.doesNotMatch(mute, /NeurIPS/i);
-assert.doesNotMatch(mute, /\.pdf(?:["')]|$)/im);
+assert.match(mute, /NeurIPS 2026/);
+assert.match(mute, /https:\/\/arxiv\.org\/abs\/2611\.11989/);
+assert.match(mute, /https:\/\/jindl465\.github\.io\/website\/MUTE\//);
+assert.doesNotMatch(mute, /Manuscript · Under review/);
 assert.match(mute, /TalkingHead-1KH/);
 assert.match(mute, /CelebV-HQ/);
 assert.match(mute, /Hallo2/);
 assert.match(mute, /Audio2Head/);
 assert.match(mute, /SadTalker/);
 assert.match(mute, /Ditto/);
-assert.match(mute, /<td>SadTalker<\/td><td><strong>4\.195<\/strong><\/td><td>4\.712<\/td><td><strong>0\.921<\/strong><\/td><td>0\.852<\/td>/);
-assert.match(mute, /86\.1%/);
-assert.match(mute, /100명/);
-assert.match(mute, /1,000개/);
+assert.match(mute, /<td>SadTalker<\/td><td><strong>4\.703<\/strong><\/td><td>5\.297 \(ARO\)<\/td><td><strong>0\.864<\/strong>/);
+assert.match(mute, /78\.1% ± 2\.56%/);
+assert.match(mute, /100 participants/);
+assert.match(mute, /1,000 responses/);
 assert.equal((mute.match(/class="section-label"/g) ?? []).length, 13);
 assert.equal((mute.match(/class="research-figure-scroll"/g) ?? []).length, 7);
 assert.doesNotMatch(mute, /mute-threat-model\.svg|mute-framework\.svg/);
 
 for (const assetPath of muteAssets) {
   assert.equal(existsSync(new URL(assetPath, root)), true, `${assetPath}가 필요하다.`);
-  assert.match(mute, new RegExp(assetPath.replace("drafts", "").replaceAll("/", "\\/")));
+  assert.match(mute, new RegExp(assetPath.replace("src", "").replaceAll("/", "\\/")));
 }
 
 const eleventyConfig = readFileSync(new URL("eleventy.config.js", root), "utf8");
@@ -237,6 +230,6 @@ const writingOnSite = readFileSync(
 assert.match(writingOnSite, /hideFromWritings:\s*true/);
 
 const base = readFileSync(new URL("src/_includes/base.njk", root), "utf8");
-assert.match(base, /href="\/css\/style\.css\?v=20260929-neutral-type"/);
+assert.match(base, /href="\/css\/style\.css\?v=20261110-mute-media"/);
 
 console.log("Research writing typography and tone checks passed.");
