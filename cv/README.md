@@ -1,10 +1,14 @@
 # Editable CV source
 
-`CV_ksm.tex` is an editable LaTeX reconstruction of the three-page PDF at
-`../src/assets/CV_ksm.pdf`. It is newly written source, not the recovered original.
-The original text, Computer Modern fonts, monochrome moderncv banking style,
-section rules, and overall layout have been reproduced. Some line breaks and
-page breaks differ; publication titles and authors stay together when edited.
+`CV_ksm.tex` is the editable LaTeX source for the three-page website CV at
+`../src/assets/CV_ksm.pdf`. It was reconstructed from the September 2026 PDF,
+using Computer Modern fonts, monochrome moderncv banking style, and matching
+section rules. Some line and page breaks differ from that original;
+publication titles and authors stay together when edited.
+
+The November 2026 update adds Korean patent application **10-2026-0220251**,
+filed on **2026-11-06**, as pending. Its English title is a CV translation of
+the Korean filing title, and the inventor order follows the application notice.
 
 ## Edit and compile
 
@@ -27,7 +31,7 @@ The result is `build/CV_ksm.pdf`. Build intermediates are ignored by Git.
 - Projects: edit `\project{date}{title}{\item ...}`.
 - `\me` formats the CV owner's name consistently in author lists.
 
-This reconstruction intentionally preserves the September 2026 PDF's wording,
+Apart from the new patent entry, the source preserves the September 2026 wording,
 including **M.S. in Software**, the submission statuses, and the original
 `Unviersal` / `Conling` spellings in the SUPER title. These are not independently
 verified current facts. Review these fields when making the next content update.
@@ -35,8 +39,10 @@ verified current facts. Review these fields when making the next content update.
 ## Update the website CV
 
 After compiling and reviewing the PDF, replace `../src/assets/CV_ksm.pdf` with
-`build/CV_ksm.pdf` and commit the source and PDF together. The existing website
-CV has not been replaced as part of this source reconstruction.
+`build/CV_ksm.pdf` and commit the source and PDF together. The website PDF was
+updated alongside the source for the November 2026 patent addition. Update the
+version query in `../src/_data/site.json` when publishing a new PDF so that
+website visitors receive the latest version.
 
 The website summary in `../src/_data/cv.js` is maintained separately; editing
 that file does not update this CV or its PDF. There is no automatic CV build
