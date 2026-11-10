@@ -8,7 +8,8 @@ publication titles and authors stay together when edited.
 
 The November 2026 update adds Korean patent application **10-2026-0220251**,
 filed on **2026-11-06**, as pending. Its English title is a CV translation of
-the Korean filing title, and the inventor order follows the application notice.
+the Korean filing title. All inventors are retained, with Seungmin Kim listed
+first as requested for the CV display.
 
 ## Edit and compile
 
