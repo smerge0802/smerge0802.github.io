@@ -1,0 +1,86 @@
+{
+  "video": {
+    "title": "\"내 목소리 지킨다\"…'딥페이크 방지' 신호 개발",
+    "source": "YTN Science",
+    "date": "2026-10-29",
+    "dateLabel": "Oct. 29, 2026",
+    "url": "https://www.youtube.com/watch?v=1UvPZycGeKk",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/1UvPZycGeKk",
+    "summary": "A television report on proactive voice protection, including my interview on how protected speech disrupts lip synchronization in generated videos.",
+    "duration": "2 min 20 sec"
+  },
+  "groups": [
+    {
+      "id": "mute",
+      "name": "MUTE",
+      "venue": "NeurIPS 2026",
+      "description": "Coverage of audio protection against talking-head and lip-sync deepfake misuse.",
+      "story": "/writings/mute-talking-head-protection/",
+      "paper": "https://arxiv.org/abs/2611.11989",
+      "project": "https://jindl465.github.io/website/MUTE/",
+      "articles": [
+        {
+          "source": "ZDNET Korea",
+          "date": "2026-10-23",
+          "dateLabel": "Oct. 23, 2026",
+          "title": "숭실대 AI안전성연구센터, 립싱크 딥페이크 차단 '뮤트' 세계 첫 개발",
+          "url": "https://zdnet.co.kr/view/?no=20261023094950",
+          "summary": "An introduction to MUTE and the collaboration between Soongsil University and Chung-Ang University."
+        },
+        {
+          "source": "JoongAng Ilbo",
+          "date": "2026-10-21",
+          "dateLabel": "Oct. 21, 2026",
+          "title": "숭실대 연구팀, ‘립싱크 딥페이크 차단 기술’ 개발…NeurIPS 2026 채택",
+          "url": "https://www.joongang.co.kr/article/25471566",
+          "summary": "Coverage of protecting a recording before it can be reused to animate a person's face."
+        },
+        {
+          "source": "NEWSIS",
+          "date": "2026-10-20",
+          "dateLabel": "Oct. 20, 2026",
+          "title": "숭실대, '세계 최초' 립싱크 딥페이크 차단 기술 개발",
+          "url": "https://www.newsis.com/view/NISX20261020_0003833758",
+          "summary": "Reporting on the team's audio-only protection approach and its acceptance at NeurIPS 2026.",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "id": "roco",
+      "name": "RoCo",
+      "venue": "ICASSP 2026 · Oral",
+      "description": "Coverage of efficient voice-cloning protection and resistance to speech enhancement.",
+      "story": "/writings/roco-robust-code/",
+      "paper": "https://doi.org/10.1109/ICASSP55912.2026.11462176",
+      "project": "https://smerge0802.github.io/RoCo/",
+      "articles": [
+        {
+          "source": "JoongAng Ilbo",
+          "date": "2026-05-11",
+          "dateLabel": "May 11, 2026",
+          "title": "숭실대, AI 음성 복제 방지 기술 ‘RoCo’ 개발",
+          "url": "https://www.joongang.co.kr/article/25427299",
+          "summary": "An overview of RoCo's proactive protection and the motivation for defending speech before misuse."
+        },
+        {
+          "source": "Electronic Times",
+          "date": "2026-05-08",
+          "dateLabel": "May 8, 2026",
+          "title": "숭실대 AI안전성연구센터, 음성 복제 방지 기술 'RoCo' 개발…ICASSP 2026 채택",
+          "url": "https://www.etnews.com/20260508000264",
+          "summary": "Coverage of RoCo's ICASSP acceptance, processing efficiency, and robustness to noise-removal attempts.",
+          "featured": true
+        },
+        {
+          "source": "NEWSIS",
+          "date": "2026-05-08",
+          "dateLabel": "May 8, 2026",
+          "title": "숭실대, AI 음성 복제 방어막 'RoCo' 개발…\"범죄 악용 차단\"",
+          "url": "https://www.newsis.com/view/NISX20260508_0003622145",
+          "summary": "Reporting on the research team and my comments on building protection that resists speech enhancement."
+        }
+      ]
+    }
+  ]
+}
