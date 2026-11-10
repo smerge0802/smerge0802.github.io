@@ -1,0 +1,223 @@
+% !TEX program = pdflatex
+% Editable reconstruction of src/assets/CV_ksm.pdf (September 2026).
+% This is a new source file reconstructed from the PDF, not the lost original.
+% Content, including original titles/spelling and degree wording, is preserved.
+% Compile: latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build CV_ksm.tex
+\documentclass[10pt,a4paper,roman]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{black}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1.85cm,right=1.85cm,top=1.3cm,bottom=1.2cm]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+
+% Keep Computer Modern even when moderncv finds an optional Pagella package.
+\renewcommand{\rmdefault}{cmr}
+\renewcommand{\sfdefault}{cmss}
+\renewcommand{\ttdefault}{cmtt}
+\renewcommand*{\namefont}{\Huge\bfseries\upshape}
+\renewcommand*{\sectionfont}{\LARGE\bfseries\upshape}
+\renewcommand*{\subsectionfont}{\large\bfseries\upshape}
+\colorlet{firstnamecolor}{black}
+\colorlet{lastnamecolor}{black}
+\colorlet{addresscolor}{black}
+\colorlet{bodyrulecolor}{black}
+\colorlet{sectioncolor}{black}
+\colorlet{subsectioncolor}{black}
+\setlength{\tabcolsep}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.025}
+\setlist[itemize]{leftmargin=11.55pt,labelsep=5pt,itemsep=1.8pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+\renewcommand{\labelitemi}{{\tiny\faIcon[regular]{circle}}}
+\makeatletter
+\RenewDocumentCommand{\section}{sm}{%
+  \par\addvspace{2.5ex}\phantomsection{}%
+  \addcontentsline{toc}{section}{#2}%
+  \strut\sectionstyle{#2}\sectionrule%
+  \par\nobreak\addvspace{1.5ex}\@afterheading}
+\makeatother
+\nopagenumbers{}
+
+% PERSONAL DETAILS: edit these fields directly.
+\name{Seungmin}{Kim}
+\phone[mobile]{010-6641-5024}
+\email{kimsm0802@soongsil.ac.kr}
+\social[googlescholar][scholar.google.com/citations?user=TCTq818AAAAJ\&hl=ko]{Google Scholar}
+
+% FORMATTING HELPERS
+% \record{date}{title}{venue / registration information}{authors}{optional note}
+% Each entry stays together when text is edited, avoiding split author lists.
+\newcommand{\me}{\textbf{\textit{Seungmin Kim}}}
+\newcommand{\equalcontribution}{\textit{*These authors contributed equally and are listed in alphabetical order.}}
+\newcommand{\record}[5]{%
+  \par\addvspace{1.2em}%
+  \begin{minipage}{\linewidth}%
+    \begin{minipage}[t]{0.83\linewidth}\raggedright
+      \textbf{#2}\strut\par\vspace{0.2em}%
+      {\small\itshape #3\strut\par}%
+      {\small #4\strut\par}%
+      \ifstrempty{#5}{}{\vspace{0.2em}{\footnotesize #5\strut\par}}%
+    \end{minipage}%
+    \hfill\begin{minipage}[t]{0.16\linewidth}\raggedleft\footnotesize #1\end{minipage}%
+  \end{minipage}\par}
+
+% \project{date}{title}{\item description ...}
+\newcommand{\project}[3]{%
+  \par\addvspace{0.9em}%
+  \begin{minipage}{\linewidth}%
+    \begin{minipage}[t]{0.80\linewidth}\raggedright\textbf{#2}\strut\end{minipage}%
+    \hfill\begin{minipage}[t]{0.19\linewidth}\raggedleft\footnotesize #1\end{minipage}\par
+    \vspace{0.25em}{\small\begin{itemize}#3\end{itemize}}%
+  \end{minipage}\par}
+
+\begin{document}
+\makecvtitle
+\vspace*{-2.8em}
+
+\section{Research Interests}
+My research focuses on \textbf{AI Safety}, with particular interests in \textbf{Adversarial Robustness} and \textbf{Speech AI Security}. I study security vulnerabilities in \textbf{speech AI systems} by analyzing speaker identity, acoustic characteristics, and the underlying mechanisms of speech synthesis models. My research also involves developing robust \textbf{voice protection} techniques and designing \textbf{attack and defense methods} for modern speech synthesis systems. Recently, I have expanded my interests to the safety and security of \textbf{Audio Language Models (ALMs)}.
+
+\section{Education}
+\cventry{Mar. 2025 -- Feb. 2027 (Expected)}{M.S. in Software}{Soongsil University}{Seoul, South Korea}{GPA: 4.5/4.5}{%
+  \begin{itemize}\item Research focus: AI Safety, Adversarial Robustness, Speech AI Security\end{itemize}}
+\cventry{Mar. 2021 -- Feb. 2025}{B.S. in Software}{Soongsil University}{Seoul, South Korea}{GPA: 3.0/4.5}{%
+  \begin{itemize}\item Relevant Coursework: Machine Learning, Artificial Intelligence, Algorithms, Linear Algebra\end{itemize}}
+
+\section{Work Experience}
+\cventry{Sep. 2026 -- Present}{Research Intern}{AIM Intelligence}{Seoul, South Korea}{}{}
+\cventry{Jul. 2022 -- Feb. 2025}{Undergraduate Student Intern}{AI Safety Center, Soongsil University}{Seoul, South Korea}{}{}
+
+\section{Publications}
+\subsection{International Conference}
+\record{2026}
+  {MUTE: Multi-Level Alignment Uncoupling Against Talking-Head Exploitation for Voice Protection}
+  {Accepted to Advances in Neural Information Processing Systems (NeurIPS 2026)}
+  {Donghyun Kim*, Jin Hong*, \me*, Dain Kim, Junseok Kwon, and Daeseon Choi}
+  {\equalcontribution}
+\record{Sep. 2026}
+  {NaVo: Natural Voice Protection against Voice Cloning Attacks via Generative Universal Adversarial Audio}
+  {Interspeech 2026}
+  {Seoyoung Park*, \me*, Sohee Park, Dain Kim, et al.}
+  {\equalcontribution}
+\record{May. 2026}
+  {RoCo: Robust Code for Fast and Effective Proactive Defense against Voice Cloning Attack}
+  {2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2026, \textbf{Oral})}
+  {\me, Dain Kim, Sohee Park, and Daeseon Choi}{}
+\record{Jun. 2024}
+  {Session Replication Attack Through QR Code Sniffing in Passkey CTAP Registration}
+  {39th International Conference on ICT Systems Security and Privacy Protection (IFIP SEC 2024)}
+  {Donghyun Kim, \me, Gwonsang Ryu, and Daeseon Choi}{}
+\record{Aug. 2023}
+  {Face Verifiable Anonymization in Video Surveillance}
+  {24th World Conference on Information Security Applications (WISA)}
+  {Sungjune Park, Hyunsik Na, \me, and Daeseon Choi}{}
+
+\subsection{Submitted / Under Review}
+% "Unviersal" and "Conling" below are spellings in the supplied PDF.
+\record{2027}
+  {SUPER: Speaker-Conditioned Unviersal Adversarial Perturbation Generator For Real-Time Voice Conling Defense}
+  {2027 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2027)}
+  {Seoyoung Park, Hajin Kim, Woongjae Lee, \me, Sungho Park, Souhwan Jung}{}
+\record{2026}
+  {RoVo: Robust Voice Protection Against Voice Cloning Attacks via Embedding-Level Adversarial Perturbations}
+  {IEEE ACCESS}
+  {\me, Sohee Park, Dain Kim, Donghyun Kim, Jisu Lee, and Daeseon Choi}{}
+
+\subsection{Domestic Journal}
+\record{Jun. 2024}
+  {Voice Synthesis Detection Using Language Model-Based Speech Feature Extraction}
+  {The Korea Institute of Information Security \& Cryptology (KCI Indexed)}
+  {\me, Sohee Park, and Daeseon Choi}{}
+\record{Mar. 2023}
+  {Comparison of Korean Speech De-identification Performance of Speech De-identification Model and Broadcast Voice Modulation}
+  {Smart Media Journal (KCI Indexed)}
+  {\me, Daeul Park, and Daeseon Choi}{}
+
+\subsection{Domestic Conference}
+\record{Jun. 2025}
+  {Proactive Defense Against DeepVoice Misuse via Voice Codebook Perturbation}
+  {Korea Information Security Society Yeongnam Branch Academic Conference}
+  {\me, Dain Kim, and Daeseon Choi}{}
+\record{Jun. 2025}
+  {DeepVoice Threat Response: Current Technological Trends}
+  {Korea Information Security Society Summer Academic Conference}
+  {Dain Kim, \me, and Daeseon Choi}{}
+\record{Sep. 2024}
+  {A Study on Voice Reconstruction Methods for Defending Against AI-based Deep Voice Generation}
+  {Korea Information Security Society Winter Academic Conference}
+  {\me, Sohee Park, and Daeseon Choi}{}
+\record{Sep. 2023}
+  {Speech Synthesis Classification Using BERT}
+  {Korea Information Security Society Chungcheong Branch Academic Conference}
+  {\me, Donghyun Kim, and Daeseon Choi}{}
+\record{Dec. 2022}
+  {A Proposal for Improvement of Security Vulnerability in Broadcast Voice Modulation Using Lightweight Anonymization Model}
+  {Korea Information Science Society Korea Software Comprehensive Academic Conference}
+  {Daeul Park, \me, Hyunsik Na, and Daeseon Choi}{}
+
+\section{Patents and Software Copyrights}
+\subsection{Patent}
+\record{Jul. 2026}
+  {Code-Based Fast Voice Protection System and Method for Preventing Voice Cloning Attacks}
+  {Application No.: 10-2026-0141478 (Korea), Pending}
+  {\me, Sohee Park, and Daeseon Choi}{}
+\record{Dec. 2025}
+  {Speech Transformation Method for Defense Against Voice Cloning Attack}
+  {Application No.: 19/437,589 (U.S), Pending}
+  {\me\ and Daeseon Choi}{}
+\record{Apr. 2025}
+  {Method and Apparatus for Classifying Generated Speech}
+  {Application No.: 19/184,526 (U.S), Pending}
+  {\me\ and Daeseon Choi}{}
+\record{Mar. 2025}
+  {Speech Transformation Method for Synthetic Voice Attack Defense}
+  {Application No.: 10-2025-0032204 (Korea), Pending}
+  {\me\ and Daeseon Choi}{}
+\record{Nov. 2023}
+  {Generated Speech Classification Method and Apparatus}
+  {Application No.: 10-2023-0151614 (Korea), Pending}
+  {\me\ and Daeseon Choi}{}
+
+\subsection{Software Copyrights}
+\record{sep. 2026}
+  {Method and System for Preventing Unauthorized Voice Synthesis Using Universal Adversarial Audio Generated by a Generative Audio Model}
+  {Registration No.: C-2026-047875, Registered}
+  {\me, Seoyoung Park, Souhwan Jung and Daeseon Choi}{}
+\record{Jul. 2026}
+  {Code-Based Fast Voice Protection System and Method for Preventing Voice Cloning Attacks}
+  {Registration No.: C-2026-032488, Registered}
+  {\me, Sohee Park, and Daeseon Choi}{}
+\record{Nov. 2024}
+  {Voice Reconstruction System for Defense Against AI-Based DeepVoice Generation}
+  {Registration No.: C-2024-048858, Registered}
+  {\me\ and Daeseon Choi}{}
+
+\section{Research Projects}
+\project{Apr. 2026 -- Dec. 2028}
+  {Development of Robust Real-time Deepfake Disruption Technology via Adversarial Noise Injection for Privacy Protection}
+  {\item Personal Information Protection Commission (PIPC)
+   \item Researching proactive defense against voice cloning attacks.
+   \item Led proposal preparation.}
+\project{Apr. 2024 -- Dec. 2027}
+  {Development of Countermeasure Technologies for Generative AI Security Threats}
+  {\item Institute for Information \& Communications Technology Planning \& Evaluation (IITP)
+   \item Researching deepfake defense technologies.
+   \item Participated in proposal preparation.}
+\project{Apr. 2021 -- Dec. 2026}
+  {Robust AI and Distributed Attack Detection for Edge AI Security}
+  {\item Institute for Information \& Communications Technology Planning \& Evaluation (IITP)
+   \item Research on DeepVoice detection and voice deepfake security for smart speakers.
+   \item Developed a prototype system for simulating attacks against edge AI.}
+\project{Nov. 2023}
+  {Voice Modulation Service for Customer Response Data}
+  {\item TimeGate (Commissioned Project)
+   \item Performed voice modulation on customer response speech data.}
+\project{Feb. 2023 -- Nov. 2023}
+  {Research on the Analysis of Protocols and Security Verification of Passwordless Authentication}
+  {\item Cryptography Research Group, Korea Institute of Information Security and Cryptology}
+
+\section{Skills}
+\cvitem{Programming}{Python, C, C++}
+\cvitem{Operating Systems}{Windows, Linux}
+\end{document}
