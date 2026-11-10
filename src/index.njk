@@ -112,6 +112,26 @@ permalink: /
   <a class="research-more" href="/writings/">Explore the research behind the papers <span aria-hidden="true">→</span></a>
 </section>
 
+<section class="home-section" id="media" aria-labelledby="media-title">
+  <div class="section-heading"><h2 id="media-title">Media &amp; interviews</h2><a class="section-aside" href="/media/">All coverage <span aria-hidden="true">→</span></a></div>
+  <div class="media-preview-grid">
+    <article class="media-preview media-preview-video">
+      <p class="media-kind"><span class="media-play" aria-hidden="true">▶</span> Video interview · MUTE</p>
+      <h3 lang="ko"><a href="/media/#video">{{ media.video.title }}</a></h3>
+      <p class="media-meta"><span>{{ media.video.source }}</span><time datetime="{{ media.video.date }}">{{ media.video.dateLabel }}</time></p>
+      <a class="media-action" href="/media/#video">Watch interview <span aria-hidden="true">→</span></a>
+    </article>
+    {% for group in media.groups %}{% for item in group.articles %}{% if item.featured %}
+    <article class="media-preview">
+      <p class="media-kind">Press · {{ group.name }}</p>
+      <h3 lang="ko"><a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }} <span aria-hidden="true">↗</span></a></h3>
+      <p class="media-meta"><span>{{ item.source }}</span><time datetime="{{ item.date }}">{{ item.dateLabel }}</time></p>
+      <a class="media-action" href="/media/#{{ group.id }}">More on {{ group.name }} <span aria-hidden="true">→</span></a>
+    </article>
+    {% endif %}{% endfor %}{% endfor %}
+  </div>
+</section>
+
 <section class="home-section" id="projects" aria-labelledby="projects-title">
   <div class="section-heading"><h2 id="projects-title">Research projects</h2></div>
   {% for item in cv.projects %}
