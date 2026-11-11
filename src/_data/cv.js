@@ -29,6 +29,7 @@ export default {
       imageAlt: "MUTE alignment-level and representation-level audio protection framework",
       note: "Accepted",
       links: [
+        { label: "NeurIPS", href: "https://neurips.cc/virtual/2026/loc/sydney/poster/154813" },
         { label: "Paper", href: "https://arxiv.org/abs/2611.11989" },
         { label: "Project", href: "https://jindl465.github.io/website/MUTE/" },
         { label: "Code", href: "https://github.com/jindl465/MUTE" },
