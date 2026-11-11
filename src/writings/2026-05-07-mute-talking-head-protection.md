@@ -10,7 +10,7 @@ writingOrder: 1
 
 MUTE extends our work on proactive voice protection to **talking-head generation**: systems that animate a portrait using an audio recording. A stolen voice can be used to produce a convincing video even when the attacker never trains a dedicated voice-cloning model. Our question was whether protecting the audio before release could weaken the audio-visual correspondence these systems need.
 
-The paper was **accepted at NeurIPS 2026** and is publicly available as [arXiv:2611.11989](https://arxiv.org/abs/2611.11989). This research story follows the public paper's experimental settings and results. The [project page](https://jindl465.github.io/website/MUTE/) includes synchronized video comparisons and an interactive version of the user-study task.
+The paper was **accepted at NeurIPS 2026**. See the [official NeurIPS poster page](https://neurips.cc/virtual/2026/loc/sydney/poster/154813) and the public paper at [arXiv:2611.11989](https://arxiv.org/abs/2611.11989). This research story follows the public paper's experimental settings and results. The [project page](https://jindl465.github.io/website/MUTE/) includes synchronized video comparisons and an interactive version of the user-study task.
 
 <div class="project-meta" aria-label="Study overview">
   <div><span>Period</span><strong>2026</strong></div>
@@ -19,6 +19,7 @@ The paper was **accepted at NeurIPS 2026** and is publicly available as [arXiv:2
 </div>
 
 <nav class="research-resource-links" aria-label="MUTE resources">
+  <a href="https://neurips.cc/virtual/2026/loc/sydney/poster/154813">NeurIPS poster ↗</a>
   <a href="https://arxiv.org/abs/2611.11989">Paper ↗</a>
   <a href="https://jindl465.github.io/website/MUTE/">Project &amp; demos ↗</a>
   <a href="https://github.com/jindl465/MUTE">Code ↗</a>
@@ -264,9 +265,10 @@ The work was carried out with **Donghyun Kim, Jin Hong, Dain Kim, Junseok Kwon, 
   <p class="publication-card-title">MUTE: Multi-Level Alignment Uncoupling Against Talking-Head Exploitation for Voice Protection</p>
   <p class="publication-card-meta">Donghyun Kim*, Jin Hong*, Seungmin Kim*, Dain Kim, Junseok Kwon, Daeseon Choi · arXiv:2611.11989</p>
   <p class="publication-card-meta">*These authors contributed equally and are listed in alphabetical order.</p>
-  <p class="publication-card-links"><a href="https://arxiv.org/abs/2611.11989">Paper (arXiv)</a><a href="https://jindl465.github.io/website/MUTE/">Project &amp; demos</a><a href="https://github.com/jindl465/MUTE">Code</a><a href="/media/#mute">Media coverage</a></p>
+  <p class="publication-card-links"><a href="https://neurips.cc/virtual/2026/loc/sydney/poster/154813">NeurIPS poster</a><a href="https://arxiv.org/abs/2611.11989">Paper (arXiv)</a><a href="https://jindl465.github.io/website/MUTE/">Project &amp; demos</a><a href="https://github.com/jindl465/MUTE">Code</a><a href="/media/#mute">Media coverage</a></p>
 </div>
 
+- [Official NeurIPS 2026 poster page](https://neurips.cc/virtual/2026/loc/sydney/poster/154813)
 - [Paper and full appendix — arXiv:2611.11989](https://arxiv.org/abs/2611.11989)
 - [Project page, synchronized comparisons, and user-study demo](https://jindl465.github.io/website/MUTE/)
 - [Source code](https://github.com/jindl465/MUTE)
